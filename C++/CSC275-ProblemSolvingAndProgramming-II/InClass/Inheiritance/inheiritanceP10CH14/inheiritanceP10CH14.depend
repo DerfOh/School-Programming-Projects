@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1383783179 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/main.cpp
+	<iostream>
+	"pet.h"
+	"Dog.h"
+	"Rock.h"
+
+1383781166 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/pet.h
+	<iostream>
+
+1383781289 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/pet.cpp
+	"pet.h"
+	<iostream>
+
+1383783286 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/Dog.cpp
+	"Dog.h"
+
+1383781589 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/Dog.h
+	"pet.h"
+
+1383782311 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/Rock.h
+	"pet.h"
+
+1383782960 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment2/Program2/Program1_Project/inheiritanceP10CH14/Rock.cpp
+	"Rock.h"
+

@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1382569947 source:/Users/steveharrow/Desktop/q4/security.cpp
+	<iostream>
+	<string>
+	"security.h"
+
+1382569915 /Users/steveharrow/Desktop/q4/security.h
+	<string>
+
+1382570755 source:/Users/steveharrow/Desktop/q4/administrator.cpp
+	<iostream>
+	<string>
+	"administrator.h"
+	"security.h"
+
+1382570384 /Users/steveharrow/Desktop/q4/administrator.h
+	<string>
+
+1382570582 source:/Users/steveharrow/Desktop/q4/main_driver.cpp
+	<iostream>
+	<string>
+	"user.h"
+	"administrator.h"
+
+1382570196 /Users/steveharrow/Desktop/q4/user.h
+	<string>
+
+1382570196 source:/Users/steveharrow/Desktop/q4/user.cpp
+	<iostream>
+	<string>
+	"user.h"
+	"security.h"
+
+1382570755 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/administrator.cpp
+	<iostream>
+	<string>
+	"administrator.h"
+	"security.h"
+
+1382570384 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/administrator.h
+	<string>
+
+1382569915 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/security.h
+	<string>
+
+1382569947 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/security.cpp
+	<iostream>
+	<string>
+	"security.h"
+
+1382570196 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/user.cpp
+	<iostream>
+	<string>
+	"user.h"
+	"security.h"
+
+1382570196 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Solution/q4/user.h
+	<string>
+

@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1384487985 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\enemy.cpp
+	"Enemy.h"
+
+1384491722 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\enemy.h
+	<iostream>
+
+1384487894 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\main.cpp
+	<iostream>
+	"Enemy.h"
+	"Ninja.h"
+	"Monster.h"
+	"Clown.h"
+
+1384481721 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\ninja.h
+	"Enemy.h"
+
+1384481721 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\monster.h
+	"Enemy.h"
+
+1384481773 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\monster.cpp
+	<iostream>
+	"Monster.h"
+
+1384481773 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\ninja.cpp
+	<iostream>
+	"Ninja.h"
+
+1384491664 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\clown.cpp
+	<iostream>
+	"Clown.h"
+
+1384491636 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\virturalfn\battlethings\clown.h
+	"Enemy.h"
+

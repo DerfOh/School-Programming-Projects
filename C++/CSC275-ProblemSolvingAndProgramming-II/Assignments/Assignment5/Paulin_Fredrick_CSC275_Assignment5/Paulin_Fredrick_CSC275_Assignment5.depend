@@ -1,0 +1,89 @@
+# depslib dependency file v1.0
+1382488726 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\administrator.cpp
+	"Security.h"
+	"Administrator.h"
+	<iostream>
+
+1382491390 
+
+1382488335 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\security.h
+	<iostream>
+
+1382488909 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\security.cpp
+	"Security.h"
+	<iostream>
+
+1382488209 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\user.cpp
+	"User.h"
+	"Security.h"
+	<iostream>
+
+1382486471 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\user.h
+
+1382594003 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\main.cpp
+	<iostream>
+	"Security.h"
+	"Administrator.h"
+	"User.h"
+
+1382488737 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\administrator.h
+	"Security.h"
+
+1382491366 h"
+
+1382491366 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\administrator.cpp
+	"Security.h"
+	"Administrator.h"
+	<iostream>
+
+1382488335 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\security.h
+	<iostream>
+
+1382491366 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\administrator.h
+	"Security.h"
+
+1382570611 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\security.cpp
+	"Security.h"
+	"User.h"
+	"Administrator.h"
+	<iostream>
+
+1382570783 source:c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\user.cpp
+	"User.h"
+	"Security.h"
+	<iostream>
+
+1382570783 c:\users\fredrick\dropbox\school\csc275-01-problemsolvingandprogrammingii\assignments\assignment5\paulin_fredrick_csc275_assignment5\user.h
+	"Security.h"
+
+1382569670 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/Administrator.cpp
+	"Security.h"
+	"Administrator.h"
+	<iostream>
+
+1382570624 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/Security.h
+	<iostream>
+
+1382569671 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/Administrator.h
+	"Security.h"
+
+1382570611 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/Security.cpp
+	"Security.h"
+	"User.h"
+	"Administrator.h"
+	<iostream>
+
+1382570783 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/User.cpp
+	"User.h"
+	"Security.h"
+	<iostream>
+
+1382570783 /Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/User.h
+	"Security.h"
+
+1382570817 source:/Users/fredrickpaulin/Dropbox/School/CSC275-01-ProblemSolvingAndProgrammingII/Assignments/Assignment5/Paulin_Fredrick_CSC275_Assignment5/main.cpp
+	<iostream>
+	"Security.h"
+	"Administrator.h"
+	"User.h"
+
