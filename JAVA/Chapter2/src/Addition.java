@@ -6,8 +6,7 @@ public class Addition {
 
 	public static void main(String[] args) {
 		
-		//create a Scanner to obtain input from the command window
-		Scanner input = new Scanner(System.in);
+		Scanner input = new Scanner(System.in);//create a Scanner to obtain input from the command window
 		
 		int number1; //first number to add
 		int number2; //second number to add
@@ -22,9 +21,8 @@ public class Addition {
 		sum = number1  + number2; //adds the integers
 		
 		System.out.printf("Sum is %d\n", sum); //displays the sum
+		//System.out.printf("Sum is %d\n", number1 + number2); //an alternative method where you don't need the sum variable
 		
-		
-
 	}
 
 }
