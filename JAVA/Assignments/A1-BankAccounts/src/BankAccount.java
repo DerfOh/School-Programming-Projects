@@ -23,8 +23,14 @@ public class BankAccount {
 
 	//checks the values entered by the user for their account number and password, returns t or f depending on success
 	public boolean testLogin(int accountNumber, String accountPassword){
+
+		System.out.printf("You entered %s for your account password.\n", accountPassword);
+		System.out.printf("You entered %d for your account number.", accountNumber);
+		
 		for (int i=0; i<BankAccount.accounts.length; i++){
-			if (accountNumber == BankAccount.accounts[i] && accountPassword == BankAccount.passwords[i]){
+			System.out.println(i);
+			if ((accountNumber == BankAccount.accounts[i]) && (accountPassword == BankAccount.passwords[i])){
+				
 				System.out.println("Login Successful!");
 				loginSuccessful = true;
 				return loginSuccessful;
@@ -43,14 +49,12 @@ public class BankAccount {
 		//get account number through scanner
 		System.out.print("Enter your account number: ");
 		accountNumber = input.nextInt();
-		System.out.printf("You entered %d for your account number.", accountNumber);
 		System.out.println("");
 		
 		//get account password through scanner
-		System.out.println("Enter the password for your account: ");
+		System.out.print("Enter the password for your account: ");
 		input.nextLine();
 		accountPassword = input.nextLine();
-		System.out.printf("You entered %s for your account password.", accountPassword);
 		
 		loginSuccessful = testLogin(accountNumber,accountPassword);
 //			else{
