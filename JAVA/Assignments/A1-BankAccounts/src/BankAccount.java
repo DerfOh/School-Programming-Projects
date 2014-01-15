@@ -27,9 +27,11 @@ public class BankAccount {
 			if (accountNumber == BankAccount.accounts[i] && accountPassword == BankAccount.passwords[i]){
 				System.out.println("Login Successful!");
 				loginSuccessful = true;
+				return loginSuccessful;
 			}
 			else{
-				loginSuccessful = false; 
+				System.out.println("Login Failed!");
+				loginSuccessful = false;
 			}
 		}
 		return loginSuccessful;
@@ -42,9 +44,11 @@ public class BankAccount {
 		System.out.print("Enter your account number: ");
 		accountNumber = input.nextInt();
 		System.out.printf("You entered %d for your account number.", accountNumber);
+		System.out.println("");
 		
 		//get account password through scanner
-		System.out.print("Enter the password for your account: ");
+		System.out.println("Enter the password for your account: ");
+		input.nextLine();
 		accountPassword = input.nextLine();
 		System.out.printf("You entered %s for your account password.", accountPassword);
 		
