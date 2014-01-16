@@ -21,47 +21,61 @@ public class BankAccount {
 	
 	
 
-	//checks the values entered by the user for their account number and password, returns t or f depending on success
-	public boolean testLogin(int accountNumber, String accountPassword){
-
-		System.out.printf("You entered %s for your account password.\n", accountPassword);
+	//checks the values entered by the user for their account number, returns t or f depending on success
+	public boolean testAccountNum(int accountNumber){
 		System.out.printf("You entered %d for your account number.", accountNumber);
 		
-		for (int i=0; i<BankAccount.accounts.length; i++){
-			System.out.println(i);
-			if ((accountNumber == BankAccount.accounts[i]) && (accountPassword == BankAccount.passwords[i])){
-				
-				System.out.println("Login Successful!");
-				loginSuccessful = true;
-				return loginSuccessful;
+		for (int i=0; i<BankAccount.accounts.length;){
+			if (accountNumber == BankAccount.accounts[i]){
+				return true;
 			}
 			else{
-				System.out.println("Login Failed!");
-				loginSuccessful = false;
+				i++;
 			}
 		}
-		return loginSuccessful;
+		return false;
+	}
+	
+	//checks the values entered by the user for their account password, returns t or f depending on success
+	public boolean testAccountPass(String accountPassword){
+		System.out.printf("You entered %s for your account password.\n", accountPassword);
+		for (int i=0; i<BankAccount.accounts.length;){
+			if (accountPassword == BankAccount.passwords[i]){
+				return true;
+			}
+			else{
+				i++;
+			}
+		}
+		return false;
 	}
 	
 	//prompts the user for login information then checks the credentials. Has a fail-safe where if the login is attempted more than 3 times then the program will terminate
 	public boolean login(){
-		//int i = 0;
-		//get account number through scanner
+		boolean accountNumSuccessful = false;
+		boolean accountPasswordSuccessful = false;	
+			
+		//get account number
 		System.out.print("Enter your account number: ");
 		accountNumber = input.nextInt();
-		System.out.println("");
 		
 		//get account password through scanner
 		System.out.print("Enter the password for your account: ");
 		input.nextLine();
 		accountPassword = input.nextLine();
 		
-		loginSuccessful = testLogin(accountNumber,accountPassword);
-//			else{
-//				System.out.println("You have failed the login attempt 3 times, please contact your banker for assistance. The program will now close.");
-//				System.exit(0);
-			//i++;
-		return loginSuccessful;
+		accountNumSuccessful = testAccountNum(accountNumber);
+		accountPasswordSuccessful = testAccountPass(accountPassword);
+		
+		//checks if both values match 
+		if (accountNumSuccessful == true && accountPasswordSuccessful == true){
+			return true;
+		}
+		else{
+			return false;
+		}
+		
+		
 	}
 	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
@@ -76,6 +90,13 @@ public class BankAccount {
 		
 	}
 	
+	//main menu of the program, only accessable after login.
+	public static void menu(BankAccount a1){
+		System.out.printf("Main Menu for account %d Reached!", a1.accountNumber);
+		System.exit(0);
+		
+	}
+	
 	
 	//main function of the program
 	public static void main(String[] args) {
@@ -83,9 +104,26 @@ public class BankAccount {
 		boolean verified;
 		System.out.println("Banking Program");
 		BankAccount a1 = new BankAccount();
+		int i;
 		
 		//run the user through the login process. 
 		verified = a1.login();
+		
+		for (i = 0; i<3;){
+			if (verified){
+				System.out.println("\nUser Verified.\n");
+				menu(a1);
+			}
+			
+			else{
+				System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
+				verified = a1.login();
+				i++;
+			}
+		}
+		
+		System.out.printf("You have failed to log in %d times. Please contact your banker for assistance. The program will now close.", i);
+		System.exit(0);
 		
 		
 	
