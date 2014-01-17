@@ -24,7 +24,6 @@ public class BankAccount {
 	//checks the values entered by the user for their account number, returns t or f depending on success
 	public boolean testAccountNum(int accountNumber){
 		System.out.printf("You entered %d for your account number.", accountNumber);
-		
 		for (int i=0; i<BankAccount.accounts.length;){
 			if (accountNumber == BankAccount.accounts[i]){
 				return true;
@@ -79,10 +78,8 @@ public class BankAccount {
 	}
 	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
-	public void transactions(int accountType, int transactionType, double amount){
-		//if transactionType = 1 -> Withdraw
-		//if transactionType = 2 -> Deposit
-		//if transactionType = 3 -> Inquiry 
+	public void transactions(int accountType, double amount){
+
 	}
 	
 	//prints the current balance of the account passed in as an arg
@@ -90,9 +87,29 @@ public class BankAccount {
 		
 	}
 	
-	//main menu of the program, only accessable after login.
-	public static void menu(BankAccount a1){
+	//main menu of the program, only accessible after login.
+	public void menu(BankAccount a1){
 		System.out.printf("Main Menu for account %d Reached!", a1.accountNumber);
+		System.out.println("1. Withdraw money");
+		System.out.println("2. Deposite money");
+		System.out.println("3. Balance inquiry");
+		
+		int choice;
+		switch (choice){
+			//Deposite
+			case 1: 
+				transactions();
+				break;
+			//Withdraw
+			case 2:
+				transactions();
+				break;
+			//Inquiry
+			case 3:
+				transactions();
+				break;
+		}
+		
 		System.exit(0);
 		
 	}
@@ -112,7 +129,7 @@ public class BankAccount {
 		for (i = 0; i<3;){
 			if (verified){
 				System.out.println("\nUser Verified.\n");
-				menu(a1);
+				a1.menu(a1);
 			}
 			
 			else{
