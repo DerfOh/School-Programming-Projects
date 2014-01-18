@@ -40,8 +40,8 @@ public class BankAccount {
 	//checks the values entered by the user for their account password, returns t or f depending on success
 	public boolean testAccountPass(String accountPassword){
 		System.out.printf("You entered %s for your account password.\n", accountPassword);
-		for (int i=0; i<BankAccount.accounts.length;){
-			if (accountPassword == BankAccount.passwords[i]){
+		for (int i=0; i<BankAccount.passwords.length;){
+			if (BankAccount.passwords[i].equals(accountPassword)){//this is the correct way to compare strings in java
 				return true;
 			}
 			else{
@@ -56,16 +56,6 @@ public class BankAccount {
 		boolean accountNumSuccessful;
 		boolean accountPasswordSuccessful;	
 		
-		
-		//for testing only!
-		
-		for (int i=0; i<BankAccount.accounts.length;){
-			System.out.println(BankAccount.accounts[i]);
-			System.out.println(BankAccount.passwords[i]);
-			i++;
-		}
-		
-		/////////////////////////////////
 			
 		//get account number
 		System.out.print("Enter your account number: ");
@@ -79,8 +69,19 @@ public class BankAccount {
 		accountNumSuccessful = testAccountNum(accountNumber);
 		accountPasswordSuccessful = testAccountPass(accountPassword);
 		
+		//for testing only!
+		
+		for (int i=0; i<BankAccount.accounts.length;){
+			System.out.println(BankAccount.accounts[i]);
+			System.out.println(BankAccount.passwords[i]);
+			i++;
+		}
+		System.out.println(accountNumSuccessful);
+		System.out.println(accountPasswordSuccessful);
+		/////////////////////////////////
+		
 		//checks if both values match 
-		if (!((accountNumSuccessful) & (accountPasswordSuccessful))){
+		if ((accountNumSuccessful) & (accountPasswordSuccessful)){
 			return true;
 		}
 		else{
