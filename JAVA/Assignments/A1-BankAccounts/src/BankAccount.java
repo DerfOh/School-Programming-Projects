@@ -11,7 +11,9 @@ public class BankAccount {
 	int accountType; //1 = Checking, 2 = Savings, 3 = retirement
 	int transactionType; //1 = withdraw, 2 = deposit, 3 = inquiry
 	private int accountNumber; //Set by user
-	private int balance; //The balance of the account being accessed
+	private double checkingBalance = 1000; //The balance of the account being accessed
+	private double savingsBalance = 1000;
+	private double retirementBalance = 1000;
 	int loginAttempts;//counts the amount of times the user has tried to log in
 	
 	boolean loginSuccessful; //set by login function
@@ -51,8 +53,19 @@ public class BankAccount {
 	
 	//prompts the user for login information then checks the credentials. Has a fail-safe where if the login is attempted more than 3 times then the program will terminate
 	public boolean login(){
-		boolean accountNumSuccessful = false;
-		boolean accountPasswordSuccessful = false;	
+		boolean accountNumSuccessful;
+		boolean accountPasswordSuccessful;	
+		
+		
+		//for testing only!
+		
+		for (int i=0; i<BankAccount.accounts.length;){
+			System.out.println(BankAccount.accounts[i]);
+			System.out.println(BankAccount.passwords[i]);
+			i++;
+		}
+		
+		/////////////////////////////////
 			
 		//get account number
 		System.out.print("Enter your account number: ");
@@ -67,7 +80,7 @@ public class BankAccount {
 		accountPasswordSuccessful = testAccountPass(accountPassword);
 		
 		//checks if both values match 
-		if (accountNumSuccessful == true && accountPasswordSuccessful == true){
+		if (!((accountNumSuccessful) & (accountPasswordSuccessful))){
 			return true;
 		}
 		else{
@@ -78,8 +91,26 @@ public class BankAccount {
 	}
 	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
-	public void transactions(int accountType, double amount){
-
+	public double transactions(int transactionType, double accountBalance){
+		double amount;
+		
+		if (transactionType != 3){System.out.print("Enter the amount you would like to");}
+		switch(transactionType){
+		//withdraw	
+		case 1:
+			System.out.print(" withdraw: $" );
+			amount = input.nextDouble();
+			return (accountBalance - amount);
+		//deposit		
+		case 2:
+			System.out.print(" deposit: $" );
+			amount = input.nextDouble();
+			return (accountBalance + amount);
+		//inquiry		
+		case 3:
+			return (accountBalance);
+		}
+		return accountBalance;
 	}
 	
 	//prints the current balance of the account passed in as an arg
@@ -88,26 +119,48 @@ public class BankAccount {
 	}
 	
 	//main menu of the program, only accessible after login.
-	public void menu(BankAccount a1){
-		System.out.printf("Main Menu for account %d Reached!", a1.accountNumber);
+	public void menu(BankAccount account){
+		System.out.printf("Main Menu for account %d Reached! \n\n", accountNumber);
+		
+		System.out.println("1. Checking");
+		System.out.println("2. Savings");
+		System.out.println("3. Retirement");
+		System.out.println("4. Exit");
+		accountType = input.nextInt();
+		
+		if(accountType == 4){
+			System.exit(0);
+		}
+		
 		System.out.println("1. Withdraw money");
 		System.out.println("2. Deposite money");
 		System.out.println("3. Balance inquiry");
+		transactionType = input.nextInt();
 		
-		int choice;
-		switch (choice){
-			//Deposite
+
+		
+
+		
+		switch (accountType){
+			//checking
 			case 1: 
-				transactions();
+				checkingBalance = transactions(transactionType, checkingBalance);
+				System.out.printf("Current balance: $%f\n\n", checkingBalance);
+				menu(account);
 				break;
-			//Withdraw
+			//savings
 			case 2:
-				transactions();
+				savingsBalance = transactions(transactionType, savingsBalance);
+				System.out.printf("Current balance: $%f\n\n", savingsBalance);
+				menu(account);
 				break;
-			//Inquiry
+			//retirement
 			case 3:
-				transactions();
+				retirementBalance = transactions(transactionType, retirementBalance);
+				System.out.printf("Current balance: $%f\n\n", retirementBalance);
+				menu(account);
 				break;
+			
 		}
 		
 		System.exit(0);
@@ -120,21 +173,21 @@ public class BankAccount {
 		
 		boolean verified;
 		System.out.println("Banking Program");
-		BankAccount a1 = new BankAccount();
+		BankAccount account = new BankAccount();
 		int i;
-		
+
 		//run the user through the login process. 
-		verified = a1.login();
+		verified = account.login();
 		
 		for (i = 0; i<3;){
 			if (verified){
 				System.out.println("\nUser Verified.\n");
-				a1.menu(a1);
+				account.menu(account);
 			}
 			
 			else{
 				System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
-				verified = a1.login();
+				verified = account.login();
 				i++;
 			}
 		}
