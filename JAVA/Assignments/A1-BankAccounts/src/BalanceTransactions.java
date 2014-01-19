@@ -4,6 +4,9 @@ import java.util.Scanner;
 public class BalanceTransactions extends BankAccount {
 	static Scanner input = new Scanner(System.in);
 	
+	int accountType; //1 = Checking, 2 = Savings, 3 = retirement
+	int transactionType; //1 = withdraw, 2 = deposit, 3 = inquiry
+	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
 	public static double transactions(int transactionType, double accountBalance){
 		double amount;
