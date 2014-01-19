@@ -3,33 +3,15 @@ import java.util.Scanner; //For getting user input
 public class BankAccount {
 	//so that we can get input from user.
 	Scanner input = new Scanner(System.in);
-	
-	//initializes variables
-	private static int[] accounts = new int[] {1111, 2222, 3333, 4444};	//Array containing all of the account numbers
-	private static String[] passwords = new String[] {"mom", "dad", "1993", "ham"};	//Array containing all of the account passwords
 		
 	int accountType; //1 = Checking, 2 = Savings, 3 = retirement
 	int transactionType; //1 = withdraw, 2 = deposit, 3 = inquiry
-	private int accountNumber; //Set by user
 	
 	private double checkingBalance = 1000; //The balance of the account being accessed
 	private double savingsBalance = 1000;
 	private double retirementBalance = 1000;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	//checks the values entered by the user for their account number, returns t or f depending on success
-	public boolean testAccountCred(int accountNumber, String accountPassword){
-		System.out.printf("You entered %d for your account number.", accountNumber);
-		for (int i=0; i<BankAccount.accounts.length;){
-			if (accountNumber == BankAccount.accounts[i] & BankAccount.passwords[i].equals(accountPassword)){
-				return true;
-			}
-			else{
-				i++;
-			}
-		}
-		return false;
-	}
 	
 	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
@@ -45,7 +27,7 @@ public class BankAccount {
 			
 			//check for over withdraw
 			if ((accountBalance - amount) < 0){
-				System.out.println("WARNING! The amount you have entered will result in an overdraft.\nPlease renter your choice.");
+				System.out.println("WARNING! The amount you have entered will result in an overdraft.\nReturning to main menu.\n");
 				return accountBalance;
 			}
 			
@@ -64,40 +46,42 @@ public class BankAccount {
 	
 	//main menu of the program, only accessible after login.
 	public void menu(BankAccount account){
-		System.out.printf("Main Menu for account %d Reached! \n\n", accountNumber);
-		
-		System.out.println("1. Checking");
-		System.out.println("2. Savings");
-		System.out.println("3. Retirement");
-		System.out.println("4. Log Out");
+		System.out.println("Select account");
+		System.out.println("--------------------------");
+		System.out.printf("1. Checking\t%.2f\n", account.checkingBalance);
+		System.out.printf("2. Savings\t%.2f\n", account.savingsBalance);
+		System.out.printf("3. Retirement\t%.2f\n", account.retirementBalance);
+		System.out.printf("4. Log Out\n");
+		System.out.println("--------------------------");
 		accountType = input.nextInt();
 		
+		//if user decides to log out
 		if(accountType == 4){
 			Driver.main(null);
 		}
 		
+		System.out.println("Select Operation");
+		System.out.println("--------------------------");
 		System.out.println("1. Withdraw money");
 		System.out.println("2. Deposite money");
 		System.out.println("3. Balance inquiry");
+		System.out.println("--------------------------");
 		transactionType = input.nextInt();
 		
 		switch (accountType){
 			//checking
 			case 1: 
 				checkingBalance = transactions(transactionType, checkingBalance);
-				System.out.printf("Current balance: $%.2f\n\n", checkingBalance);
 				menu(account);
 				break;
 			//savings
 			case 2:
 				savingsBalance = transactions(transactionType, savingsBalance);
-				System.out.printf("Current balance: $%.2f\n\n", savingsBalance);
 				menu(account);
 				break;
 			//retirement
 			case 3:
 				retirementBalance = transactions(transactionType, retirementBalance);
-				System.out.printf("Current balance: $%.2f\n\n", retirementBalance);
 				menu(account);
 				break;
 		}

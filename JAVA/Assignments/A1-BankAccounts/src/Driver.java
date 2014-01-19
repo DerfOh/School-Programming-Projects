@@ -5,6 +5,8 @@ public class Driver {
 	static int accountNumber;
 	static String accountPassword;
 	static Scanner input = new Scanner(System.in);
+	static BankAccount account = new BankAccount();
+	static AccountDatabase database = new AccountDatabase();
 	
 	public static boolean login(BankAccount account){
 		//get account number
@@ -16,7 +18,7 @@ public class Driver {
 		input.nextLine();
 		accountPassword = input.nextLine();
 		
-		return account.testAccountCred(accountNumber, accountPassword);
+		return database.testAccountCred(accountNumber, accountPassword);
 	}
 	
 	//main function of the program
@@ -24,7 +26,7 @@ public class Driver {
 			
 		boolean verified;
 		System.out.println("Banking Program");
-		BankAccount account = new BankAccount();
+		
 		int i;
 
 		//run the user through the login process. 
