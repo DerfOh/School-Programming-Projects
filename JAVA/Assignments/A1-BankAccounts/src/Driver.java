@@ -4,9 +4,11 @@ import java.util.Scanner;
 public class Driver {
 	static int accountNumber;
 	static String accountPassword;
+	
 	static Scanner input = new Scanner(System.in);
 	static BankAccount account = new BankAccount();
 	static AccountDatabase database = new AccountDatabase();
+	static BalanceTransactions transactions = new BalanceTransactions();
 	
 	public static boolean login(BankAccount account){
 		//get account number
@@ -35,7 +37,7 @@ public class Driver {
 		for (i = 0; i<3;){
 			if (verified){
 				System.out.println("\nUser Verified.\n");
-				account.menu(account);
+				transactions.menu(account);
 			}
 			
 			else{
