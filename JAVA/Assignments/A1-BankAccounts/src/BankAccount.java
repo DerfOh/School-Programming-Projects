@@ -1,4 +1,3 @@
-
 import java.util.Scanner; //For getting user input
 
 public class BankAccount {
@@ -25,10 +24,10 @@ public class BankAccount {
 	
 
 	//checks the values entered by the user for their account number, returns t or f depending on success
-	public boolean testAccountNum(int accountNumber){
+	public boolean testAccountNum(int accountNumber, String accountPassword){
 		System.out.printf("You entered %d for your account number.", accountNumber);
 		for (int i=0; i<BankAccount.accounts.length;){
-			if (accountNumber == BankAccount.accounts[i]){
+			if (accountNumber == BankAccount.accounts[i] & BankAccount.passwords[i].equals(accountPassword)){
 				return true;
 			}
 			else{
@@ -54,8 +53,7 @@ public class BankAccount {
 	
 	//prompts the user for login information then checks the credentials. Has a fail-safe where if the login is attempted more than 3 times then the program will terminate
 	public boolean login(){
-		boolean accountNumSuccessful;
-		boolean accountPasswordSuccessful;	
+		boolean accountLoginSuccessful;	
 		
 			
 		//get account number
@@ -67,14 +65,13 @@ public class BankAccount {
 		input.nextLine();
 		accountPassword = input.nextLine();
 		
-		accountNumSuccessful = testAccountNum(accountNumber);
-		accountPasswordSuccessful = testAccountPass(accountPassword);
+		accountLoginSuccessful = testAccountNum(accountNumber, accountPassword);
 		
 		//System.out.println(accountNumSuccessful);
 		//System.out.println(accountPasswordSuccessful);
 		
 		//checks if both values match 
-		if ((accountNumSuccessful) & (accountPasswordSuccessful)){
+		if (accountLoginSuccessful){
 			return true;
 		}
 		else{
@@ -123,7 +120,7 @@ public class BankAccount {
 		accountType = input.nextInt();
 		
 		if(accountType == 4){
-			System.exit(0);
+			main(null);
 		}
 		
 		System.out.println("1. Withdraw money");
@@ -154,9 +151,7 @@ public class BankAccount {
 				System.out.printf("Current balance: $%.2f\n\n", retirementBalance);
 				menu(account);
 				break;
-			
 		}
-		
 		System.exit(0);
 		
 	}
