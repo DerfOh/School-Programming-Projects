@@ -1,3 +1,4 @@
+
 import java.util.Scanner; //For getting user input
 
 public class BankAccount {
@@ -69,16 +70,8 @@ public class BankAccount {
 		accountNumSuccessful = testAccountNum(accountNumber);
 		accountPasswordSuccessful = testAccountPass(accountPassword);
 		
-		//for testing only!
-		
-		for (int i=0; i<BankAccount.accounts.length;){
-			System.out.println(BankAccount.accounts[i]);
-			System.out.println(BankAccount.passwords[i]);
-			i++;
-		}
-		System.out.println(accountNumSuccessful);
-		System.out.println(accountPasswordSuccessful);
-		/////////////////////////////////
+		//System.out.println(accountNumSuccessful);
+		//System.out.println(accountPasswordSuccessful);
 		
 		//checks if both values match 
 		if ((accountNumSuccessful) & (accountPasswordSuccessful)){
@@ -146,19 +139,19 @@ public class BankAccount {
 			//checking
 			case 1: 
 				checkingBalance = transactions(transactionType, checkingBalance);
-				System.out.printf("Current balance: $%f\n\n", checkingBalance);
+				System.out.printf("Current balance: $%.2f\n\n", checkingBalance);
 				menu(account);
 				break;
 			//savings
 			case 2:
 				savingsBalance = transactions(transactionType, savingsBalance);
-				System.out.printf("Current balance: $%f\n\n", savingsBalance);
+				System.out.printf("Current balance: $%.2f\n\n", savingsBalance);
 				menu(account);
 				break;
 			//retirement
 			case 3:
 				retirementBalance = transactions(transactionType, retirementBalance);
-				System.out.printf("Current balance: $%f\n\n", retirementBalance);
+				System.out.printf("Current balance: $%.2f\n\n", retirementBalance);
 				menu(account);
 				break;
 			
