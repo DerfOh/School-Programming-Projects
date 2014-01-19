@@ -11,18 +11,12 @@ public class BankAccount {
 	int accountType; //1 = Checking, 2 = Savings, 3 = retirement
 	int transactionType; //1 = withdraw, 2 = deposit, 3 = inquiry
 	private int accountNumber; //Set by user
+	
 	private double checkingBalance = 1000; //The balance of the account being accessed
 	private double savingsBalance = 1000;
 	private double retirementBalance = 1000;
-	int loginAttempts;//counts the amount of times the user has tried to log in
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
-	boolean loginSuccessful; //set by login function
-	private boolean overdraft = false;//set to t when balance goes below 0
-	
-	private String accountPassword;//password entered by user
-	
-	
-
 	//checks the values entered by the user for their account number, returns t or f depending on success
 	public boolean testAccountCred(int accountNumber, String accountPassword){
 		System.out.printf("You entered %d for your account number.", accountNumber);
@@ -37,19 +31,6 @@ public class BankAccount {
 		return false;
 	}
 	
-	//prompts the user for login information then checks the credentials. Has a fail-safe where if the login is attempted more than 3 times then the program will terminate
-	public boolean login(){
-		//get account number
-		System.out.print("Enter your account number: ");
-		accountNumber = input.nextInt();
-		
-		//get account password through scanner
-		System.out.print("Enter the password for your account: ");
-		input.nextLine();
-		accountPassword = input.nextLine();
-		
-		return testAccountCred(accountNumber, accountPassword);
-	}
 	
 	//Does the type of transaction on the account as it is passed in with the amount of money being handled
 	public double transactions(int transactionType, double accountBalance){
@@ -61,6 +42,13 @@ public class BankAccount {
 		case 1:
 			System.out.print(" withdraw: $" );
 			amount = input.nextDouble();
+			
+			//check for over withdraw
+			if ((accountBalance - amount) < 0){
+				System.out.println("WARNING! The amount you have entered will result in an overdraft.\nPlease renter your choice.");
+				return accountBalance;
+			}
+			
 			return (accountBalance - amount);
 		//deposit		
 		case 2:
@@ -93,10 +81,6 @@ public class BankAccount {
 		System.out.println("3. Balance inquiry");
 		transactionType = input.nextInt();
 		
-
-		
-
-		
 		switch (accountType){
 			//checking
 			case 1: 
@@ -118,7 +102,5 @@ public class BankAccount {
 				break;
 		}
 		System.exit(0);
-		
 	}
-
 }
