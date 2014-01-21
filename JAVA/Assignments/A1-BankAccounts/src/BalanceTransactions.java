@@ -62,17 +62,17 @@ public class BalanceTransactions extends BankAccount {
 		switch (accountType){
 			//checking
 			case 1: 
-				account.checkingBalance = transactions(transactionType, account.checkingBalance);
+				checkingBalance = transactions(transactionType, checkingBalance);
 				menu(account);
 				break;
 			//savings
 			case 2:
-				account.savingsBalance = transactions(transactionType, account.savingsBalance);
+				savingsBalance = transactions(transactionType, savingsBalance);
 				menu(account);
 				break;
 			//retirement
 			case 3:
-				account.retirementBalance = transactions(transactionType, account.retirementBalance);
+				retirementBalance = transactions(transactionType, retirementBalance);
 				menu(account);
 				break;
 		}
