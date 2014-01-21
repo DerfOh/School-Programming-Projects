@@ -41,9 +41,9 @@ public class BalanceTransactions extends BankAccount {
 	public void menu(BankAccount account){
 		System.out.println("Select account");
 		System.out.println("--------------------------");
-		System.out.printf("1. Checking\t%.2f\n", account.checkingBalance);
-		System.out.printf("2. Savings\t%.2f\n", account.savingsBalance);
-		System.out.printf("3. Retirement\t%.2f\n", account.retirementBalance);
+		System.out.printf("1. Checking\t%.2f\n", checkingBalance);
+		System.out.printf("2. Savings\t%.2f\n", savingsBalance);
+		System.out.printf("3. Retirement\t%.2f\n", retirementBalance);
 		System.out.printf("4. Log Out\n");
 		System.out.println("--------------------------");
 		accountType = input.nextInt();
@@ -62,17 +62,17 @@ public class BalanceTransactions extends BankAccount {
 		switch (accountType){
 			//checking
 			case 1: 
-				account.checkingBalance = transactions(transactionType, account.checkingBalance);
+				checkingBalance = transactions(transactionType, checkingBalance);
 				menu(account);
 				break;
 			//savings
 			case 2:
-				account.savingsBalance = transactions(transactionType, account.savingsBalance);
+				savingsBalance = transactions(transactionType, savingsBalance);
 				menu(account);
 				break;
 			//retirement
 			case 3:
-				account.retirementBalance = transactions(transactionType, account.retirementBalance);
+				retirementBalance = transactions(transactionType, retirementBalance);
 				menu(account);
 				break;
 		}
