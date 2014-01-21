@@ -20,7 +20,7 @@ public class Driver {
 		input.nextLine();
 		accountPassword = input.nextLine();
 		
-		return database.testAccountCred(accountNumber, accountPassword);
+		return database.testAccountCred(accountNumber, accountPassword, account);
 	}
 	
 	//main function of the program

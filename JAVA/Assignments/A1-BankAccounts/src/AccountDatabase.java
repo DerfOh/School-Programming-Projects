@@ -13,6 +13,13 @@ public class AccountDatabase {
 		return false;
 	}
 	
+	public boolean testAccountCred(int accountNumber, String accountPassword, BankAccount account){
+		if ((account.getAccountPassword().equals(accountPassword)) & (accountNumber == account.getAccountNumber())){
+			return true;
+		}
+		return false;
+	}
+	
 	static public int getAccountIndex(){return i;}
 
 	public static int getDatabaseSize() {return accounts.length;}
