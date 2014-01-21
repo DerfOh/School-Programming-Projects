@@ -6,15 +6,11 @@ public class Driver {
 	static String accountPassword;
 	
 	static Scanner input = new Scanner(System.in);
-	static BankAccount[] account = new BankAccount[AccountDatabase.getDatabaseSize()];
-	
-	static boolean firstRun = true;
-	
-	
+	static BankAccount account = new BankAccount();
 	static AccountDatabase database = new AccountDatabase();
 	static BalanceTransactions transactions = new BalanceTransactions();
 	
-	public static boolean login(){
+	public static boolean login(BankAccount account){
 		//get account number
 		System.out.print("Enter your account number: ");
 		accountNumber = input.nextInt();
@@ -33,34 +29,25 @@ public class Driver {
 		boolean verified;
 		System.out.println("Banking Program");
 		
-		if (firstRun){
-			for(int i = 0; i < AccountDatabase.getDatabaseSize(); i++)
-			{
-			    account[i] = new BankAccount(1000, 1000, 1000);
-			    firstRun = false;
-			}
-		}
 		int i;
 
 		//run the user through the login process. 
-		verified = login();
+		verified = login(account);
 		
 		for (i = 0; i<3;){
 			if (verified){
-				System.out.printf("\nUser Verified for account %d\n", AccountDatabase.getAccountIndex());
-				
-				BalanceTransactions.menu(account);
+				System.out.println("\nUser Verified.\n");
+				transactions.menu(account);
 			}
 			
 			else{
 				System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
-				verified = login();
+				verified = login(account);
 				i++;
 			}
 		}
 		
 		System.out.printf("You have failed to log in %d times. Please contact your banker for assistance. The program will now close.", i);
 		System.exit(0);
-		
 	}
 }
