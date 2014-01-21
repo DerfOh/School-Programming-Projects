@@ -6,7 +6,7 @@ public class Driver {
 	static String accountPassword;
 	
 	static Scanner input = new Scanner(System.in);
-	static BankAccount account = new BankAccount();
+	static BankAccount account = new BankAccount(1111, "0000");
 	static AccountDatabase database = new AccountDatabase();
 	static BalanceTransactions transactions = new BalanceTransactions();
 	
