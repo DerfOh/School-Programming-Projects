@@ -49,13 +49,8 @@ public class BalanceTransactions extends BankAccount {
 			writer.printf("Savings - $%.2f\n", savingsBalance);
 			writer.printf("Retirement - $%.2f\n", retirementBalance);
 			writer.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (FileNotFoundException e) {e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {e.printStackTrace();}
 	}
 	
 	public void menu(BankAccount account){
