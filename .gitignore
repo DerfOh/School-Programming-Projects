@@ -6,3 +6,5 @@ JAVA/InClassExamples/1-13/.classpath
 *.class
 
 .project
+
+*.txt
