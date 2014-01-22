@@ -1,3 +1,6 @@
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.Scanner;
 
 
@@ -38,18 +41,39 @@ public class BalanceTransactions extends BankAccount {
 		return accountBalance;
 	}
 	
+	public void writeToFile(){
+		PrintWriter writer;
+		try {
+			writer = new PrintWriter("Account_Balances.txt", "UTF-8");
+			writer.printf("Checking - $%.2f\n", checkingBalance);
+			writer.printf("Savings - $%.2f\n", savingsBalance);
+			writer.printf("Retirement - $%.2f\n", retirementBalance);
+			writer.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void menu(BankAccount account){
 		System.out.println("Select account");
 		System.out.println("--------------------------");
 		System.out.printf("1. Checking\t%.2f\n", checkingBalance);
 		System.out.printf("2. Savings\t%.2f\n", savingsBalance);
 		System.out.printf("3. Retirement\t%.2f\n", retirementBalance);
-		System.out.printf("4. Log Out\n");
+		System.out.printf("4. Save balances to file.\n");
+		System.out.printf("5. Log Out\n");
 		System.out.println("--------------------------");
 		accountType = input.nextInt();
 		
+		//if user decides to save balances
+		if(accountType == 4){writeToFile(); menu(account);}
+		
 		//if user decides to log out
-		if(accountType == 4){System.exit(0);}
+		if(accountType == 5){System.exit(0);}
 		
 		System.out.println("Select Operation");
 		System.out.println("--------------------------");
