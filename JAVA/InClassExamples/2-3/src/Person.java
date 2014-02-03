@@ -1,4 +1,4 @@
-
+//creates a class called person with generic variables for the sake of example
 public class Person {
 	
 	private int age;
