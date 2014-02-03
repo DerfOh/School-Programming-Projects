@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class ClassProjectDriver {
 
-	public static void setInfo(Person guy){
+	public static void setInfo(Person genericPerson){
 		Scanner input = new Scanner(System.in);
 		int newAge = 0;
 		String newName = "";
@@ -11,8 +11,8 @@ public class ClassProjectDriver {
 		System.out.println("Please enter the name: ");
 		input.nextLine();
 		newName = input.nextLine();
-		guy.setAge(newAge);
-		guy.setName(newName);
+		genericPerson.setAge(newAge);
+		genericPerson.setName(newName);
 	}
 	
 	public static void main(String[] args) {
