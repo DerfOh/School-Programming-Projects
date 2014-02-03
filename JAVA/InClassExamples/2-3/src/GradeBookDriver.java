@@ -4,7 +4,7 @@ public class GradeBookDriver {
 	public static void main(String[] args) {
 		GradeBook gb = new GradeBook();
 		
-		gb.displayMessage();
+		gb.displayMessage("Welcome to the gradebook!");
 
 	}
 
