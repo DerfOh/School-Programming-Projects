@@ -36,7 +36,7 @@ public class BankApp {
 		for (int i = 0; i<3;){
 			if (verified){
 				System.out.println("\nUser Verified.\n");
-				menu();
+				menu(accountDatabase);
 			}
 			
 			else{
@@ -70,8 +70,45 @@ public class BankApp {
 		}
 	}
 	
-	public static void menu(){
+	public static void menu(ArrayList<BankAccount> accountDatabase){
+		double amount = 0;
+		int transactionType;
 		
+		
+		System.out.println("Select Operation");
+		System.out.printf("Current Balance: $%.2f\n", accountDatabase.get(0).getBalance());
+		System.out.println("--------------------------");
+		System.out.println("1. Withdraw money");
+		System.out.println("2. Deposite money");
+		System.out.println("3. Balance inquiry");
+		System.out.println("4. Exit");
+		System.out.println("--------------------------");
+		transactionType = input.nextInt();
+		
+		
+		if ((transactionType == 1) || (transactionType == 2)){
+			System.out.println("Enter the amount: ");
+			amount = input.nextDouble();
+		}
+		else if (transactionType == 5){System.exit(0);}
+		else{System.out.println("Invalid choice."); menu(accountDatabase);}
+		
+		switch (transactionType){
+			case 1: 
+				accountDatabase.get(0).withdraw(amount);
+				menu(accountDatabase);
+				break;
+			case 2:
+				accountDatabase.get(0).deposit(amount);
+				menu(accountDatabase);
+				break;
+			case 3:
+				
+				break;
+		}
+		System.exit(0);
+		
+		System.exit(0);
 	}
 
 }

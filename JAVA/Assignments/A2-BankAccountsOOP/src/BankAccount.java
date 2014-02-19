@@ -6,6 +6,7 @@
  */
 
 import java.util.Calendar;
+import java.util.ArrayList;
 
 public class BankAccount {
 	
@@ -16,10 +17,7 @@ public class BankAccount {
 	
 	private char accountType;
 	
-	private double accountBalance;
-	
-	private Calendar date = Calendar.getInstance();
-	
+		
 	String statement; 
 
 
@@ -32,33 +30,35 @@ public class BankAccount {
 	
 	public void setPassword(int password){accountPassword = password;}
 	
-	public void deposit (double amount){accountBalance += amount;}
+	public void deposit (double amount){balance += amount;}
 	
-	public void withdraw (double amount){accountBalance -= amount;}
+	public void withdraw (double amount){balance -= amount;}
 	
 	public void transfer (int toAccountNo, double amount){
 		
 	}
 	
-	public String createStatement(){
-		statement =("\n--------------------------\n")
-		+("1. Account Balance\t%.2f\n" + balance)
+	public String createStatement(ArrayList<BankClient> clientDatabase){
+		statement = ("\n--------------------------\n")
+		+("Account Number: %d" + accountNumber)
+		+("\nAccount Type: %c" + accountType)
+		+("\nAccount Balance\t%.2f\n" + balance)
+		+("\nClient Name: %s" + clientDatabase.get(0).getName())
+		+("\nClient Branch: %s" + clientDatabase.get(0).getBranch())
 		+("\n--------------------------\n");
 		return statement;
 		
 	}
 	
-	public void createAccount(int accountNumber){
-		
-	}
+	public void createAccount(int accountNumberIn){accountNumber = accountNumberIn;}
 	
 	public int getAccountNumber(){return accountNumber;}
 	
 	public int getAccountPassword(){return accountPassword;}
 	
-	public double getBalance(){return accountBalance;}
+	public double getBalance(){return balance;}
 	
-	public String getStatement(){return createStatement();}
+	public String getStatement(ArrayList<BankClient> clientDatabase){return createStatement(clientDatabase);}
 	
 	
 }
