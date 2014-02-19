@@ -1,4 +1,12 @@
+/**
+ * Author: Fredrick Paulin <fredrick@fredrickpaulin.com>
+ * Time of creation: Feb 19, 2014 1:14:15 PM
+ * Code function: creates a BankAccount class an associates methods with it
+ * Class: Problem Solving and Programming with Java - CSC 276
+ */
+
 import java.util.Calendar;
+
 public class BankAccount {
 	
 	protected double balance;
@@ -16,7 +24,7 @@ public class BankAccount {
 
 
 	
-	private BankAccount(int accountNumIn, double balanceIn, char typeIn){
+	BankAccount(int accountNumIn, double balanceIn, char typeIn){
 		balance = balanceIn;
 		accountNumber = accountNumIn;
 		accountType = typeIn;		
