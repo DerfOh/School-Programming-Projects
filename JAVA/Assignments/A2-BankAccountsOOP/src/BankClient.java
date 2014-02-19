@@ -15,7 +15,7 @@ public class BankClient {
 	public BankClient(){
 		name = "NOT INITIALIZED!";
 		branch = "NOT INITIALIZED!";
-		gender = 'M';
+		gender = 'A';
 		day = date.toString();
 	}
 	
@@ -26,10 +26,18 @@ public class BankClient {
 		day = date.toString();
 	}
 	
+	
+	//begin setters
 	public void setName(String nameIn){name = nameIn;}
 	public void setBranch(String branchIn){branch = branchIn;}
 	public void setDay(String dayIn){day = dayIn;}
 	public void setGender(char genderIn){gender = genderIn;}
+	
+	//begin getters
+	public String getName(){return name;}
+	public String getBranch(){return branch;}
+	public char getGender(){return gender;}
+	public String getDate(){return day;}
 	
 	
 }

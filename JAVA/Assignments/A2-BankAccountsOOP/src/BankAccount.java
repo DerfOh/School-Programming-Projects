@@ -54,6 +54,8 @@ public class BankAccount {
 	
 	public int getAccountNumber(){return accountNumber;}
 	
+	public int getAccountPassword(){return accountPassword;}
+	
 	public double getBalance(){return accountBalance;}
 	
 	public String getStatement(){return createStatement();}
