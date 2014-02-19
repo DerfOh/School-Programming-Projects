@@ -1,3 +1,4 @@
+import java.util.Calendar;
 public class BankAccount {
 	
 	protected double balance;
@@ -9,6 +10,9 @@ public class BankAccount {
 	
 	private double accountBalance;
 	
+	private Calendar date = Calendar.getInstance();
+	
+	String statement; 
 
 
 	
@@ -18,24 +22,22 @@ public class BankAccount {
 		accountType = typeIn;		
 	}
 	
-	public void setPassword(int password){
-		
-	}
+	public void setPassword(int password){accountPassword = password;}
 	
-	public void deposit (double amount){
-		
-	}
+	public void deposit (double amount){accountBalance += amount;}
 	
-	public void withdraw (double amount){
-		
-	}
+	public void withdraw (double amount){accountBalance -= amount;}
 	
 	public void transfer (int toAccountNo, double amount){
 		
 	}
 	
-	public String toString(){
-		return; 
+	public String createStatement(){
+		statement =("\n--------------------------\n")
+		+("1. Account Balance\t%.2f\n" + balance)
+		+("\n--------------------------\n");
+		return statement;
+		
 	}
 	
 	public void createAccount(int accountNumber){
@@ -46,7 +48,7 @@ public class BankAccount {
 	
 	public double getBalance(){return accountBalance;}
 	
-	public String getStatement(){return toString();}
+	public String getStatement(){return createStatement();}
 	
 	
 }
