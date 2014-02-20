@@ -11,20 +11,28 @@ import java.util.Scanner;
 
 public class BankApp {
 	static Scanner input = new Scanner(System.in);
+	static int accountIndex;
+	static int clientIndex = 0;
+	
+	
 	
 	public static void main(String[] args) {
-
-		
 		final ArrayList<BankClient> clientDatabase = new ArrayList<BankClient> ();//creates client array
 		final ArrayList<BankAccount> accountDatabase = new ArrayList<BankAccount> ();//creates account array
 		
 		BankClient client1 = new BankClient("John Doe", "Flint Branch", 'M');//make a new client
-		BankAccount account1 = new BankAccount(0000, 100.00, 'M');//make a new account
+		BankAccount account1 = new BankAccount(0000, 100.00, 'C');//make a new account type checking
+		BankAccount account2 = new BankAccount(1111, 100.00, 'S');//make a new account type savings
+		BankAccount account3 = new BankAccount(2222, 100.00, 'R');//Make a new account type retirement
 		
 		clientDatabase.add(client1);//add the client to the database
-		accountDatabase.add(account1);//add the account to the database
+		accountDatabase.add(account1);//add the checking account to the database
+		accountDatabase.add(account2);//add the savings account to the database
+		accountDatabase.add(account3);//add the retirement account to the database
 		
 		accountDatabase.get(0).setPassword(1234);//set the password for account at index 0
+		accountDatabase.get(1).setPassword(1234);//set the password for account at index 1
+		accountDatabase.get(2).setPassword(1234);//set the password for account at index 2
 		
 		boolean verified;
 		System.out.println("Banking Program");
@@ -36,7 +44,7 @@ public class BankApp {
 		for (int i = 0; i<3;){
 			if (verified){
 				System.out.println("\nUser Verified.\n");
-				menu(accountDatabase);
+				menu(accountDatabase, clientDatabase);
 			}
 			
 			else{
@@ -62,7 +70,18 @@ public class BankApp {
 		System.out.print("Enter the password for your account: ");
 		loginPassword = input.nextInt();
 		
-		if ((loginPassword == accountDatabase.get(0).getAccountPassword()) && (loginNumber == accountDatabase.get(0).getAccountNumber())){
+		for (int i = 0; i<accountDatabase.size(); i++){
+			if (accountDatabase.get(i).getAccountNumber() == loginNumber){
+				accountIndex = i;
+				if (i % 3 == 0){
+					clientIndex++;
+				}
+				break;
+			}
+		}
+		
+		
+		if ((loginPassword == accountDatabase.get(accountIndex).getAccountPassword()) && (loginNumber == accountDatabase.get(accountIndex).getAccountNumber())){
 			return true;
 		}
 		else{
@@ -70,18 +89,19 @@ public class BankApp {
 		}
 	}
 	
-	public static void menu(ArrayList<BankAccount> accountDatabase){
+	public static void menu(ArrayList<BankAccount> accountDatabase, ArrayList<BankClient> clientDatabase){
 		double amount = 0;
 		int transactionType;
+		String statement;
 		
 		
 		System.out.println("Select Operation");
-		System.out.printf("Current Balance: $%.2f\n", accountDatabase.get(0).getBalance());
+		System.out.printf("Current Balance: $%.2f\n", accountDatabase.get(accountIndex).getBalance());
 		System.out.println("--------------------------");
 		System.out.println("1. Withdraw money");
 		System.out.println("2. Deposite money");
-		System.out.println("3. Balance inquiry");
-		System.out.println("4. Exit");
+		System.out.println("3. Generate Statement");
+		System.out.println("Any other number to log out");
 		System.out.println("--------------------------");
 		transactionType = input.nextInt();
 		
@@ -90,25 +110,27 @@ public class BankApp {
 			System.out.println("Enter the amount: ");
 			amount = input.nextDouble();
 		}
-		else if (transactionType == 5){System.exit(0);}
-		else{System.out.println("Invalid choice."); menu(accountDatabase);}
+		else if(transactionType == 3){/*intentionally left blank*/}
+		else if (transactionType == 4){System.exit(0);}
+		
+		else{System.out.println("Invalid choice."); menu(accountDatabase, clientDatabase);}
 		
 		switch (transactionType){
 			case 1: 
-				accountDatabase.get(0).withdraw(amount);
-				menu(accountDatabase);
+				accountDatabase.get(accountIndex).withdraw(amount);
+				menu(accountDatabase, clientDatabase);
 				break;
 			case 2:
-				accountDatabase.get(0).deposit(amount);
-				menu(accountDatabase);
+				accountDatabase.get(accountIndex).deposit(amount);
+				menu(accountDatabase, clientDatabase);
 				break;
 			case 3:
-				
+				statement = accountDatabase.get(accountIndex).getStatement(clientDatabase, accountIndex, clientIndex);
+				System.out.println(statement);
+				menu(accountDatabase, clientDatabase);
 				break;
+			default:
+				System.exit(0);
 		}
-		System.exit(0);
-		
-		System.exit(0);
 	}
-
 }

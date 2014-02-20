@@ -5,7 +5,6 @@
  * Class: Problem Solving and Programming with Java - CSC 276
  */
 
-import java.util.Calendar;
 import java.util.ArrayList;
 
 public class BankAccount {
@@ -38,14 +37,16 @@ public class BankAccount {
 		
 	}
 	
-	public String createStatement(ArrayList<BankClient> clientDatabase){
-		statement = ("\n--------------------------\n")
-		+("Account Number: %d" + accountNumber)
-		+("\nAccount Type: %c" + accountType)
-		+("\nAccount Balance\t%.2f\n" + balance)
-		+("\nClient Name: %s" + clientDatabase.get(0).getName())
-		+("\nClient Branch: %s" + clientDatabase.get(0).getBranch())
-		+("\n--------------------------\n");
+	public String createStatement(ArrayList<BankClient> clientDatabase, int accountIndex, int clientIndex){
+		statement = ("\n------------------------------------\n")
+		+("Account Number: \t" + accountNumber)
+		+("\nAccount Type: \t\t" + accountType)
+		+("\nAccount Balance\t\t" + balance)
+		+("\nClient Name: \t\t" + clientDatabase.get(clientIndex).getName())
+		+("\nClient Branch: \t\t" + clientDatabase.get(clientIndex).getBranch())
+		+("\nClient Gender: \t\t" + clientDatabase.get(clientIndex).getGender())
+		+("\nDate of access: \t\t" + clientDatabase.get(clientIndex).getDate())
+		+("\n------------------------------------\n");
 		return statement;
 		
 	}
@@ -58,7 +59,7 @@ public class BankAccount {
 	
 	public double getBalance(){return balance;}
 	
-	public String getStatement(ArrayList<BankClient> clientDatabase){return createStatement(clientDatabase);}
+	public String getStatement(ArrayList<BankClient> clientDatabase, int accountIndex, int clientIndex){return createStatement(clientDatabase, accountIndex, clientIndex);}
 	
 	
 }
