@@ -11,37 +11,19 @@ import java.util.Scanner;
 
 public class BankApp {
 	static Scanner input = new Scanner(System.in);
-	static int accountIndex;
-	static int clientIndex = 0;
-	
+	static int accountIndex;//this is set in the login function as it is dependent on what the user enters
+	static int clientIndex;//this is changed in the login function when the user provides credentials
+	static ArrayList<BankClient> clientDatabase = new ArrayList<BankClient> ();//creates client array
+	static ArrayList<BankAccount> accountDatabase = new ArrayList<BankAccount> ();//creates account array
 	
 	
 	public static void main(String[] args) {
-		final ArrayList<BankClient> clientDatabase = new ArrayList<BankClient> ();//creates client array
-		final ArrayList<BankAccount> accountDatabase = new ArrayList<BankAccount> ();//creates account array
 		
-		BankClient client1 = new BankClient("John Doe", "Flint Branch", 'M');//make a new client
-		BankAccount account1 = new BankAccount(0000, 100.00, 'C');//make a new account type checking
-		BankAccount account2 = new BankAccount(1111, 100.00, 'S');//make a new account type savings
-		BankAccount account3 = new BankAccount(2222, 100.00, 'R');//Make a new account type retirement
+		initializeDatabase();//creates bank accounts, and clients
 		
-		clientDatabase.add(client1);//add the client to the database
-		accountDatabase.add(account1);//add the checking account to the database
-		accountDatabase.add(account2);//add the savings account to the database
-		accountDatabase.add(account3);//add the retirement account to the database
+		boolean verified = login(clientDatabase, accountDatabase);//run the user through the login process
 		
-		accountDatabase.get(0).setPassword(1234);//set the password for account at index 0
-		accountDatabase.get(1).setPassword(1234);//set the password for account at index 1
-		accountDatabase.get(2).setPassword(1234);//set the password for account at index 2
-		
-		boolean verified;
-		System.out.println("Banking Program");
-		
-		
-		//run the user through the login process.
-		verified = login(clientDatabase, accountDatabase);
-		
-		for (int i = 0; i<3;){
+		for (int i = 0; i<3;){//checks if the user was verified
 			if (verified){
 				System.out.println("\nUser Verified.\n");
 				menu(accountDatabase, clientDatabase);
@@ -73,10 +55,11 @@ public class BankApp {
 		for (int i = 0; i<accountDatabase.size(); i++){
 			if (accountDatabase.get(i).getAccountNumber() == loginNumber){
 				accountIndex = i;
-				if (i % 3 == 0){
-					clientIndex++;
-				}
 				break;
+			}
+			if (((i + 1)% 3)== 0){
+				//assuming every user has EXACTLY three accounts per client this will tell the computer what client is connected via their account number
+				clientIndex++;
 			}
 		}
 		
@@ -94,25 +77,27 @@ public class BankApp {
 		int transactionType;
 		String statement;
 		
+		Hash hashObj = new Hash(clientIndex);//assuming there are EXACTLY 3 bank accounts per client this will find where to stop when making a statemnt
+		//like above except it takes the value and determines where to start in the list
+		
 		
 		System.out.println("Select Operation");
 		System.out.printf("Current Balance: $%.2f\n", accountDatabase.get(accountIndex).getBalance());
 		System.out.println("--------------------------");
 		System.out.println("1. Withdraw money");
 		System.out.println("2. Deposite money");
-		System.out.println("3. Generate Statement");
-		System.out.println("Any other number to log out");
+		System.out.println("3. Transfer money");
+		System.out.println("4. Generate Statement");
+		System.out.println("5. To log out");
 		System.out.println("--------------------------");
 		transactionType = input.nextInt();
 		
 		
-		if ((transactionType == 1) || (transactionType == 2)){
+		if ((transactionType == 1) || (transactionType == 2) || transactionType == 3){
 			System.out.println("Enter the amount: ");
 			amount = input.nextDouble();
 		}
-		else if(transactionType == 3){/*intentionally left blank*/}
-		else if (transactionType == 4){System.exit(0);}
-		
+		else if(transactionType == 4 || transactionType == 5){/*intentionally left blank*/}
 		else{System.out.println("Invalid choice."); menu(accountDatabase, clientDatabase);}
 		
 		switch (transactionType){
@@ -120,17 +105,81 @@ public class BankApp {
 				accountDatabase.get(accountIndex).withdraw(amount);
 				menu(accountDatabase, clientDatabase);
 				break;
+				
 			case 2:
 				accountDatabase.get(accountIndex).deposit(amount);
 				menu(accountDatabase, clientDatabase);
 				break;
+				
 			case 3:
-				statement = accountDatabase.get(accountIndex).getStatement(clientDatabase, accountIndex, clientIndex);
-				System.out.println(statement);
+				String toAccount;
+				System.out.println("Enter the coresponding number of the account you wish to transfer"
+						+ " \nmoney to (C)hecking, (S)avings, or (R)etirement: ");
+				input.nextLine();
+				toAccount = input.nextLine();
+				char toAccountChar = toAccount.charAt(0);
+				System.out.println(toAccountChar);
+				
+				accountDatabase.get(accountIndex).transfer(accountDatabase, amount, toAccountChar, hashObj.getMax(), hashObj.getStartPoint());
+				break;
+				
+			case 4:
+				System.out.println(("\nClient Name: \t\t" + clientDatabase.get(clientIndex).getName())
+						+("\nClient Branch: \t\t" + clientDatabase.get(clientIndex).getBranch())
+						+("\nClient Gender: \t\t" + clientDatabase.get(clientIndex).getGender())
+						+("\nDate of access: \t" + clientDatabase.get(clientIndex).getDate()));
+				System.out.println(clientIndex);
+				
+				for (int i = hashObj.getStartPoint(); i <= hashObj.getMax();){
+					statement = accountDatabase.get(i).getStatement();
+					System.out.println(statement);
+					i++;
+				}
+				
+				
+
+				
 				menu(accountDatabase, clientDatabase);
 				break;
+				
 			default:
 				System.exit(0);
 		}
+	}
+
+	public static void initializeDatabase(){
+		
+		BankClient client1 = new BankClient("John Doe", "Flint", 'M', 1234);//make a new client with parameters name, branch, gender, password
+		BankAccount account1 = new BankAccount(0000, 100.00, 'C');//make a new account type checking
+		BankAccount account2 = new BankAccount(1111, 100.00, 'S');//make a new account type savings
+		BankAccount account3 = new BankAccount(2222, 100.00, 'R');//Make a new account type retirement
+		
+		clientDatabase.add(client1);//add the client to the database
+		accountDatabase.add(account1);//add the checking account to the database
+		accountDatabase.add(account2);//add the savings account to the database
+		accountDatabase.add(account3);//add the retirement account to the database
+		
+		
+		BankClient client2 = new BankClient("Jane Smith", "Fenton", 'F', 1234);//make a new client with parameters name, branch, gender, password
+		BankAccount account4 = new BankAccount(3333, 100.00, 'C');//make a new account type checking
+		BankAccount account5 = new BankAccount(4444, 100.00, 'S');//make a new account type savings
+		BankAccount account6 = new BankAccount(5555, 100.00, 'R');//Make a new account type retirement
+		
+		clientDatabase.add(client2);//add the client to the database
+		accountDatabase.add(account4);//add the checking account to the database
+		accountDatabase.add(account5);//add the savings account to the database
+		accountDatabase.add(account6);//add the retirement account to the database
+
+		
+		//this initializes all of the passwords for each account, this is set through the client constructor
+		int j = 0;
+		for (int i = 0; i<(accountDatabase.size()); i++){
+			if ((i % 3) == 0 && i>0){// assuming that every client has exactly 3 accounts 
+				j++;
+			}			
+			accountDatabase.get(i).setPassword(clientDatabase.get(j).getPassword());//set the password for account at index i and j
+			
+		}
+		
 	}
 }

@@ -6,24 +6,30 @@
  */
 
 import java.util.Calendar;//used for date functions
+import java.text.DateFormat;//used in conjunction with the following class to output the current date to a string
+import java.text.SimpleDateFormat;//used to format the date in a more simple way
 
 public class BankClient {
-	private String name, branch, day;
+	private String name, branch;
 	private char gender;
-	private Calendar date = Calendar.getInstance();
+	private int password;
+	
+	DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+	Calendar cal = Calendar.getInstance();
+	String day = dateFormat.format(cal.getTime());
 	
 	public BankClient(){
 		name = "NOT INITIALIZED!";
 		branch = "NOT INITIALIZED!";
 		gender = 'A';
-		day = date.toString();
+		password = 0000;
 	}
 	
-	public BankClient(String nameIn, String branchIn, char genderIn){
+	public BankClient(String nameIn, String branchIn, char genderIn, int PasswordIn){
 		name = nameIn;
 		branch = branchIn;
 		gender = genderIn;
-		day = date.toString();
+		password = PasswordIn;
 	}
 	
 	
@@ -38,6 +44,8 @@ public class BankClient {
 	public String getBranch(){return branch;}
 	public char getGender(){return gender;}
 	public String getDate(){return day;}
+
+	public int getPassword(){return password;}
 	
 	
 }

@@ -33,21 +33,13 @@ public class BankAccount {
 	
 	public void withdraw (double amount){balance -= amount;}
 	
-	public void transfer (int toAccountNo, double amount){
+	public String getStatement(){
 		
-	}
-	
-	public String createStatement(ArrayList<BankClient> clientDatabase, int accountIndex, int clientIndex){
-		statement = ("\n------------------------------------\n")
+		return ("\n------------------------------------\n")
 		+("Account Number: \t" + accountNumber)
 		+("\nAccount Type: \t\t" + accountType)
 		+("\nAccount Balance\t\t" + balance)
-		+("\nClient Name: \t\t" + clientDatabase.get(clientIndex).getName())
-		+("\nClient Branch: \t\t" + clientDatabase.get(clientIndex).getBranch())
-		+("\nClient Gender: \t\t" + clientDatabase.get(clientIndex).getGender())
-		+("\nDate of access: \t\t" + clientDatabase.get(clientIndex).getDate())
 		+("\n------------------------------------\n");
-		return statement;
 		
 	}
 	
@@ -59,7 +51,19 @@ public class BankAccount {
 	
 	public double getBalance(){return balance;}
 	
-	public String getStatement(ArrayList<BankClient> clientDatabase, int accountIndex, int clientIndex){return createStatement(clientDatabase, accountIndex, clientIndex);}
+	public char getAccountType(){return accountType;}
+
+	public void transfer(ArrayList<BankAccount> accountDatabase, double amount, char toAccount, int maximum, int startingPoint) {
+		
+		for (int i= startingPoint; i<maximum;){
+			if (accountDatabase.get(i).getAccountType() == toAccount){
+				accountDatabase.get(i).deposit(amount);
+				balance -= amount;
+			}
+			i++;
+		}
+		
+	}
 	
 	
 }
