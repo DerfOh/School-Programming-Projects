@@ -19,27 +19,67 @@ public class BankApp {
 	
 	public static void main(String[] args) {
 		
+		
+		
 		initializeDatabase();//creates bank accounts, and clients
 		
-		boolean verified = login(clientDatabase, accountDatabase);//run the user through the login process
 		
-		for (int i = 0; i<3;){//checks if the user was verified
-			if (verified){
-				System.out.println("\nUser Verified.\n");
-				menu(accountDatabase, clientDatabase);
-			}
-			
-			else{
-				System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
-				verified = login(clientDatabase, accountDatabase);
-				i++;
-			}
-		}
+//		for (int i = 0; i<3;){//checks if the user was verified
+//			if (verified){
+//				System.out.println("\nUser Verified.\n");
+//				menu(accountDatabase, clientDatabase);
+//			}
+//			
+//			else{
+//				System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
+//				verified = login(clientDatabase, accountDatabase);
+//				i++;
+//			}
+//		}
+//		
+//		System.out.printf("You have failed to log in 3 times. Please contact your banker for assistance. The program will now close.");
+//		System.exit(0);
 		
-		System.out.printf("You have failed to log in 3 times. Please contact your banker for assistance. The program will now close.");
-		System.exit(0);
+		verification();
 	}
 	
+	private static void verification() {
+		String command;
+		//input.nextLine();
+		System.out.println("Welcome to the login menu, to exit the program enter 'exit', to login press Enter: ");
+		command = input.nextLine();
+		
+		boolean verified = false;//run the user through the login process and initialize the verified variable
+		boolean stop = false;//used for controlling login loop
+		
+		while(stop!=true){
+			
+			if (command.contentEquals("exit")){
+				System.exit(0);
+			}
+			else{
+				for (int i = 0; i<3;){//checks if the user was verified
+					verified = login(clientDatabase, accountDatabase);
+					if (verified){
+						System.out.println("\nUser Verified.\n");
+						menu(accountDatabase, clientDatabase);
+					}
+					
+					else{
+						System.out.printf("\nUser Not Verified, attempt %d \n\n\n", i +1);
+						i++;
+					}
+				}
+				
+				System.out.printf("You have failed to log in 3 times. Please contact your banker for assistance. The program will now close.");
+				System.exit(0);
+			}
+		
+		}
+		System.exit(0);
+		
+	}
+
 	public static boolean login(ArrayList<BankClient> clientDatabase, ArrayList<BankAccount> accountDatabase){
 		int loginNumber;
 		int loginPassword;
@@ -97,7 +137,12 @@ public class BankApp {
 			System.out.println("Enter the amount: ");
 			amount = input.nextDouble();
 		}
-		else if(transactionType == 4 || transactionType == 5){/*intentionally left blank*/}
+		
+		
+		else if(transactionType == 4){/*intentionally left blank*/}
+		
+		else if (transactionType == 5){verification();}
+		
 		else{System.out.println("Invalid choice."); menu(accountDatabase, clientDatabase);}
 		
 		switch (transactionType){
@@ -115,7 +160,7 @@ public class BankApp {
 				String toAccount;
 				System.out.println("Enter the coresponding number of the account you wish to transfer"
 						+ " \nmoney to (C)hecking, (S)avings, or (R)etirement: ");
-				input.nextLine();
+				//input.nextLine();
 				toAccount = input.nextLine();
 				char toAccountChar = toAccount.charAt(0);
 				System.out.println(toAccountChar);
