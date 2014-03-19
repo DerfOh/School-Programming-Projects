@@ -1,4 +1,9 @@
-public class Book {
+/* Author: Fredrick Paulin <fredrick@fredrickpaulin.com>
+ * Code function: creates a book object, methods have been completed. 
+ * Class: Problem Solving and Programming with Java - CSC 276
+ */
+
+public class Book{
 
     private String title;
     private boolean borrowed;
