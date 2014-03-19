@@ -1,6 +1,23 @@
 public class Library {
     
-    // Add the missing implementation to this class
+    private String address;
+    
+	
+	// Add the missing implementation to this class
+	
+	// Library Constructor
+	public Library(String streetAddress){
+		address = streetAddress;
+	}
+		
+	public void addBook(Book BookObj){
+		//implement this method
+		//use an array to store the books the library has?
+	}
+	
+	public void printAddress(){
+		System.out.println(address);
+	}
     
     public static void main(String[] args) {
         // Create two libraries
