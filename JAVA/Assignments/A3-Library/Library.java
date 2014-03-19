@@ -8,7 +8,8 @@ import java.util.ArrayList;
 public class Library {
     
     private String address;
-    static ArrayList<Book> catalogue = new ArrayList<Book> ();//creates an array of books available in the catalogue
+    ArrayList<Book> catalogue = new ArrayList<Book> ();//creates an array of books available in the catalogue
+
 	
 	// Add the missing implementation to this class
 	
@@ -19,7 +20,7 @@ public class Library {
 		
 	public void addBook(Book BookObj){
 		//implement this method
-		//use an array arraylist to store the books
+		//use an array array list to store the books
 		catalogue.add(BookObj);
 	}
 	
@@ -33,7 +34,12 @@ public class Library {
 	}
 	
 	public void printAvailableBooks(){
-		System.out.println("Our currently available books: ");
+		if(catalogue.size() == 0){
+			System.out.println("No Books are currently available.");
+		}
+		else{System.out.println("Our currently available books: ");}
+
+		
 		for (int i = 0; i<catalogue.size(); i++){
 			if(!(catalogue.get(i).isBorrowed())){//gets the boolean of the book being borrowed, if NOT Borrowed then print the title
 				System.out.println(catalogue.get(i).getTitle());
