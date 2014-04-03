@@ -11,6 +11,11 @@ public class CheckingAccount extends BankAccount {
 		setTransactionFee(fee);
 	}
 
+	@Override
+	public void computeInterestAndFees(){//when this method is called the balance is decrimented
+		setCurrentBalance(	getCurrentBalance() - getTransactionFee()	);
+	}
+
 	public void setCurrentBalance(double balance){
 			currentBalance = balance;
 	}
