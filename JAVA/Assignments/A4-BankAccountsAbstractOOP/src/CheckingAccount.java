@@ -3,8 +3,9 @@
  * Class: Problem Solving and Programming with Java - CSC 276
  */
 public class CheckingAccount extends BankAccount {
-	double currentBalance; //balance should not be less than $0.00
-	double transactionFee; //checking accounts have a fee per transaction
+	private double currentBalance; //balance should not be less than $0.00
+	private double transactionFee; //checking accounts have a fee per transaction
+	private double minimum = 0;//sets minimum balance for checking account
 
 	CheckingAccount(double balance, double fee){
 		setCurrentBalance(balance);
@@ -12,7 +13,7 @@ public class CheckingAccount extends BankAccount {
 	}
 
 	@Override
-	public void computeInterestAndFees(){//when this method is called the balance is decrimented
+	public void computeInterestAndFees(){//when this method is called the balance is decremented
 		setCurrentBalance(	getCurrentBalance() - getTransactionFee()	);
 	}
 
