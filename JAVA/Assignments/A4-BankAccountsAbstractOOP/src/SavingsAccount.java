@@ -1,5 +1,5 @@
 /* Author: Fredrick Paulin <fpaulin@umflint.edu>
- * Code function:  
+ * Code function: Sets up a savings class with the according methods and variables.
  * Class: Problem Solving and Programming with Java - CSC 276
  */
 public class SavingsAccount extends BankAccount {
@@ -40,12 +40,12 @@ public class SavingsAccount extends BankAccount {
 		minimumBalance = minimum;
 	}
 
-	public void getInterestRate(){return interestRate;}
+	public double getInterestRate(){return interestRate;}
 
-	public void getCurrentBalance(){return currentBalance;}
+	public double getCurrentBalance(){return currentBalance;}
 
-	public void getInterestGained(){return interestGained;}
+	public double getInterestGained(){return interestGained;}
 
-	public void getMinimumBalannce(){return minimumBalance;}
+	public double getMinimumBalannce(){return minimumBalance;}
 
 }

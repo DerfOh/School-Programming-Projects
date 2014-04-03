@@ -1,4 +1,4 @@
-/* Author: Fredrick Paulin <fpaulin@umflint.edu>
+/* Author: 
  * Code function:  
  * Class: Problem Solving and Programming with Java - CSC 276
  */
