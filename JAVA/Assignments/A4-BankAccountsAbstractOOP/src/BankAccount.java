@@ -8,10 +8,10 @@ public abstract class BankAccount {
 
 	//made the below methods abstract, as was discussed in class - zp 4/4/14
 
-	public abstract void computeInterestAndFees(){};
+	public abstract void computeInterestAndFees();
 
-	public abstract void computeInterestAndFees(double rate, double balance) {};
+	public abstract void computeInterestAndFees(double rate, double balance);
 
-	public abstract void doTransaction(Transaction action){};
+	public abstract void doTransaction(Transaction action) throws IllegalArgumentException;
 
 }

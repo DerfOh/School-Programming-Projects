@@ -22,10 +22,54 @@ public class SavingsAccount extends BankAccount {
 		computeInterestAndFees(interestRate, currentBalance);
 	}
 
+	@Override
+	public void computeInterestAndFees()
+	{
+		computeInterestAndFees(getInterestRate(), getCurrentBalance);
+	}
+
 	@Override  //overrides computeInterestAndFees in abstract super class: BankAccount 
 	public void computeInterestAndFees(double rate, double balance){ //required for step 3 in the instructions
 		interestGained = balance * rate; //to calculate multiply the balance by the rate then...
 		setCurrentBalance(balance + interestGained);//add the interest gained to the balance in the account.
+	}
+
+	@Override
+	public void doTransaction(Transaction action)
+	{
+		if (action instanceof MonetaryTransaction)
+		{
+			if (action instanceof Deposit)
+			{	
+				Deposit d = (Deposit) action;
+				balance += d.amount
+			}
+			else if (action instanceof Withdraw)
+			{
+				Withdraw w = (Withdraw) action;
+				if (balance > (w.amount - getMinimumBalance()))
+				{
+					balance -= w.amount
+				}
+				else
+				{
+					throw new IllegalArgumentException("Insufficient funds");
+				}
+			}
+			else if (action instanceof Transfer)
+			{
+				Transfer t = (Transfer) action;
+			}
+			else
+			{
+				//error
+				throw new IllegalArgumentException("Unrecognized Transaction type");
+			}
+		}
+		else
+		{	//the recompute transaction has been requested
+			computeInterestAndFees();
+		}
 	}
 
 	public void setInterestRate(double rate){
@@ -42,10 +86,10 @@ public class SavingsAccount extends BankAccount {
 
 	public double getInterestRate(){return interestRate;}
 
-	public double getCurrentBalance(){return currentBalance;}
+	public double getCurrentBalance(){return balance;}
 
 	public double getInterestGained(){return interestGained;}
 
-	public double getMinimumBalannce(){return minimumBalance;}
+	public double getMinimumBalance(){return minimumBalance;}
 
 }
