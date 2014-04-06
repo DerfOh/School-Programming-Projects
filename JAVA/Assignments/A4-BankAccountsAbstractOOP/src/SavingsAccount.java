@@ -4,7 +4,7 @@
  */
 public class SavingsAccount extends BankAccount {
 	private double interestRate;
-	private double currentBalance;
+	//removed the "currentBalance" variable: redundant - zp 4/4/14
 	private double interestGained; //computed by the computeInterestAndFees function
 	private double minimumBalance; //can be set to anything above or including zero
 

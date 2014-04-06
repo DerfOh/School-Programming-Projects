@@ -6,16 +6,12 @@ public abstract class BankAccount {
 
 	protected double balance;
 
-	public void computeInterestAndFees(){ //required abstract method in step 2
+	//made the below methods abstract, as was discussed in class - zp 4/4/14
 
-	}
+	public abstract void computeInterestAndFees(){};
 
-	public void computeInterestAndFees(double rate, double balance) {
+	public abstract void computeInterestAndFees(double rate, double balance) {};
 
-	}
-
-	public void doTransaction(){
-
-	}
+	public abstract void doTransaction(Transaction action){};
 
 }
