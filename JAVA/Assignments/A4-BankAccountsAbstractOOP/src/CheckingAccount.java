@@ -33,23 +33,18 @@ public class CheckingAccount extends BankAccount {
 			if (action instanceof Deposit)
 			{	
 				Deposit d = (Deposit) action;
-				balance += d.amount
+				balance += d.amount;
 			}
 			else if (action instanceof Withdraw)
 			{
 				Withdraw w = (Withdraw) action;
-				if (balance > w.amount)
-				{
-					balance -= w.amount
-				}
-				else
-				{
-					throw new IllegalArgumentException("Insufficient funds");
-				}
+				balance -= w.amount;
 			}
 			else if (action instanceof Transfer)
 			{
 				Transfer t = (Transfer) action;
+				doTransaction(new Withdraw(t.amount));
+				t.recipient.doTransaction(new Deposit(t.amount));
 			}
 			else
 			{
