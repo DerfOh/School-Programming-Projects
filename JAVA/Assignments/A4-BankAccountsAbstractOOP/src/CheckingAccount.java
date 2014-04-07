@@ -16,7 +16,7 @@ public class CheckingAccount extends BankAccount {
 	public void computeInterestAndFees(){//when this method is called the balance is decremented
 		//setCurrentBalance(	getCurrentBalance() - getTransactionFee()	);
 		//this line does the same thing as the commented one above, but this way, the stack doesn't get so lonely
-		computeInterestAndFees(getTransactionFee(), getCurrentBalance);
+		computeInterestAndFees(getTransactionFee(), getCurrentBalance());
 	}
 
 	@Override

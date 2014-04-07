@@ -12,20 +12,20 @@ public class SavingsAccount extends BankAccount {
 		setInterestRate(rate);
 		setCurrentBalance(balance);
 		setMinimumBalance(minimum);//for step 4 in the instructions
-		computeInterestAndFees(interestRate, currentBalance);
+		computeInterestAndFees(interestRate, getCurrentBalance());
 	}
 
 	SavingsAccount(double rate, double balance){//minimum isn't specified: use zero
 		setInterestRate(rate);
 		setCurrentBalance(balance);
 		setMinimumBalance(0);//minimum isn't specified: use zero
-		computeInterestAndFees(interestRate, currentBalance);
+		computeInterestAndFees(interestRate, getCurrentBalance());
 	}
 
 	@Override
 	public void computeInterestAndFees()
 	{
-		computeInterestAndFees(getInterestRate(), getCurrentBalance);
+		computeInterestAndFees(getInterestRate(), getCurrentBalance());
 	}
 
 	@Override  //overrides computeInterestAndFees in abstract super class: BankAccount 
@@ -78,8 +78,8 @@ public class SavingsAccount extends BankAccount {
 		interestRate = rate;
 	}
 
-	public void setCurrentBalance(double balance){
-		currentBalance = balance;
+	public void setCurrentBalance(double balanceIn){
+		balance = balanceIn;
 	}
 
 	public void setMinimumBalance(double minimum){
