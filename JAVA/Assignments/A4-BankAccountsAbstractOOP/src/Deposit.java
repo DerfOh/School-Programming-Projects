@@ -4,4 +4,8 @@
  */
 public class Deposit extends MonetaryTransaction {
 
+	public Deposit(double amt)
+	{
+		amount = amt;
+	}
 }
