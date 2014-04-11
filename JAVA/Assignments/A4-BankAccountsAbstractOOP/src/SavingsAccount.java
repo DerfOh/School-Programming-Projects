@@ -79,7 +79,7 @@ public class SavingsAccount extends BankAccount {
 	}
 
 	public void setCurrentBalance(double balanceIn){
-		balance = balanceIn;
+		super.balance = balanceIn;
 	}
 
 	public void setMinimumBalance(double minimum){

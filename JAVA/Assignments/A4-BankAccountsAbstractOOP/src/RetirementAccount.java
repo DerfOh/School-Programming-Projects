@@ -8,6 +8,7 @@ public class RetirementAccount extends BankAccount {
 	private double minimumBalance = 0;
 	private double annualIncome;
 	private double maxRate;
+	private double interestRate;
 
 	private double interestGained;//used and set in the computeInterestAndFees method, is added to the balance passed in
 									// and the balance variable will be adjusted
@@ -15,12 +16,18 @@ public class RetirementAccount extends BankAccount {
 	RetirementAccount(double rate, double balance, double annualIncome){
 		setCurrentBalance(balance);
 		setMaxBalance(rate, annualIncome);
+		setRate(rate);
+	}
+
+	private void setRate(double rate) {
+		// TODO Auto-generated method stub
+		interestRate = rate;
 	}
 
 	@Override
 	public void computeInterestAndFees()
 	{
-		computeInterestAndFees(getCurrentBalance())
+		computeInterestAndFees(getRate(), getCurrentBalance());
 	}
 
 	@Override  //overrides computeInterestAndFees in abstract super class: BankAccount 
@@ -76,8 +83,12 @@ public class RetirementAccount extends BankAccount {
 		}
 	}
 
+	private double getMinimumBalance() {
+		return minimumBalance;
+	}
+
 	public void setCurrentBalance(double bal){//takes in a double and sets it to the variable balance
-		balance = bal;
+		super.balance = bal;
 	}
 
 	public void setMaxBalance(double rate, double annualIncome){
@@ -93,6 +104,7 @@ public class RetirementAccount extends BankAccount {
 	public double getMaxRate(){return maxRate;}
 
 	public double getInterestGained(){return interestGained;}
-
+	
+	private double getRate() {return interestRate;}
 
 }

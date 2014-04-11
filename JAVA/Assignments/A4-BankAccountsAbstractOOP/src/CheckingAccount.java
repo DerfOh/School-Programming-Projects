@@ -6,6 +6,7 @@ public class CheckingAccount extends BankAccount {
 	//removed the "currentBalance" variable: redundant - zp 4/4/14
 	private double transactionFee; //checking accounts have a fee per transaction
 	private double minimum = 0;//sets minimum balance for checking account
+	private double currentBalance;
 
 	CheckingAccount(double balance, double fee){
 		setCurrentBalance(balance);
@@ -59,7 +60,7 @@ public class CheckingAccount extends BankAccount {
 	}
 
 	public void setCurrentBalance(double balance){
-			currentBalance = balance;
+			super.balance = balance;
 	}
 
 	public void setTransactionFee(double fee){
