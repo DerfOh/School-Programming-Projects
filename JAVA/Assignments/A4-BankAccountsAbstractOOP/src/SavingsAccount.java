@@ -94,4 +94,9 @@ public class SavingsAccount extends BankAccount {
 
 	public double getMinimumBalance(){return minimumBalance;}
 
+	@Override
+	public double getAdjustment() {
+		return interestRate;
+	}
+
 }

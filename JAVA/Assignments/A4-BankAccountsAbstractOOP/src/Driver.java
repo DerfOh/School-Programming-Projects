@@ -34,7 +34,7 @@ public class Driver  {
 		System.out.println("1. Withdraw money");
 		System.out.println("2. Deposite money");
 		System.out.println("3. Transfer money");
-		System.out.println("4. Compute interest and fees");
+		System.out.println("4. View account fees/interest");
 		System.out.println("5. To return to account selection.\n");
 		System.out.println("--------------------------");
 		do{
@@ -73,8 +73,15 @@ public class Driver  {
 		}
 		
 		else if (transactionType == 4){
-			account.computeInterestAndFees();//conducts fee adjustment
+			if (account instanceof CheckingAccount){
+				System.out.printf("Current transaction fee: $%.2f\n", account.getAdjustment());
+			}
+			
+			else if (account instanceof SavingsAccount || account instanceof RetirementAccount){
+				System.out.printf("Current interest rate: $%.2f\n", account.getAdjustment());
+			}
 			menu(account);
+			
 		}
 		
 		else if (transactionType == 5){
@@ -96,7 +103,7 @@ public class Driver  {
 		System.out.println("1. Checking");
 		System.out.println("2. Savings");
 		System.out.println("3. Retirement");
-		System.out.println("4. Exit");
+		System.out.println("4. Exit and print statement");
 		
 		
 		do{
@@ -125,6 +132,10 @@ public class Driver  {
 			break;
 		
 		case 4:
+			checking.computeInterestAndFees();//conducts fee/interest adjustment
+			savings.computeInterestAndFees();
+			retirement.computeInterestAndFees();
+			createStatement();
 			System.exit(0);
 			break;
 			
@@ -183,5 +194,12 @@ public class Driver  {
 		}
 
 	}
-}
 
+	public static void createStatement(){
+		System.out.println("-----Bank Statement-----");
+		System.out.printf("Checking: \t$%.2f\n", checking.getCurrentBalance());
+		System.out.printf("Savings: \t$%.2f\n", savings.getCurrentBalance());
+		System.out.printf("Retirement: \t$%.2f\n", retirement.getCurrentBalance());
+		System.out.printf("------------------------\n\n");
+	}
+}

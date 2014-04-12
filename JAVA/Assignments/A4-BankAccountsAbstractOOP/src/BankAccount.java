@@ -16,5 +16,7 @@ public abstract class BankAccount {
 	public abstract void doTransaction(Transaction action) throws IllegalArgumentException;
 
 	public abstract double getCurrentBalance();
+	
+	public abstract double getAdjustment();
 
 }

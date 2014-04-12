@@ -20,7 +20,6 @@ public class RetirementAccount extends BankAccount {
 	}
 
 	private void setRate(double rate) {
-		// TODO Auto-generated method stub
 		interestRate = rate;
 	}
 
@@ -106,5 +105,10 @@ public class RetirementAccount extends BankAccount {
 	public double getInterestGained(){return interestGained;}
 	
 	private double getRate() {return interestRate;}
+
+	@Override
+	public double getAdjustment() {
+		return interestRate;
+	}
 
 }
