@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Driver  {
 
-	static BankAccount checking = new CheckingAccount(100, 2.50);
-	static BankAccount savings = new SavingsAccount(0.01, 200);
-	static BankAccount retirement = new RetirementAccount (0.25, 100, 1200);
+	static BankAccount checking = new CheckingAccount(100, 2.50);//balance, fee
+	static BankAccount savings = new SavingsAccount(0.01, 200);//rate, balance
+	static BankAccount retirement = new RetirementAccount (0.25, 100, 1200);//rate, balance, annual income
 
 
 	static Scanner input = new Scanner(System.in);
@@ -37,6 +37,8 @@ public class Driver  {
 		System.out.println("4. View account fees/interest");
 		System.out.println("5. To return to account selection.\n");
 		System.out.println("--------------------------");
+		
+		
 		do{
 			try{
 				transactionType = input.nextInt();
@@ -52,6 +54,8 @@ public class Driver  {
 
 		
 		if ((transactionType == 1) || (transactionType == 2) || transactionType == 3){
+			
+			if (account instanceof CheckingAccount){account.computeInterestAndFees();}
 			System.out.println("Enter the amount: ");
 			amount = input.nextDouble();
 		}
@@ -132,8 +136,8 @@ public class Driver  {
 			break;
 		
 		case 4:
-			checking.computeInterestAndFees();//conducts fee/interest adjustment
-			savings.computeInterestAndFees();
+			//checking.computeInterestAndFees(); commented out because this is done when the transaction is conducted
+			savings.computeInterestAndFees();//conducts fee/interest adjustment
 			retirement.computeInterestAndFees();
 			createStatement();
 			System.exit(0);
