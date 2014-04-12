@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Class: Problem Solving and Programming with Java - CSC 276
  */
 
-public class Driver{
+public class Driver  {
 
 	static BankAccount checking = new CheckingAccount(100, 2.50);
 	static BankAccount savings = new SavingsAccount(0.01, 200);
@@ -22,7 +22,7 @@ public class Driver{
 		accountSelection();
 	}
 
-	public static void menu(BankAccount account){//displays menu options to user
+	public static void menu(BankAccount account) throws InputMismatchException{//displays menu options to user
 		int transactionType = 0;
 		boolean invalidInteger=false;
 		int accountSelection = 0;
@@ -44,7 +44,7 @@ public class Driver{
 			}
 			catch(InputMismatchException e){
 				System.out.println("Please enter an integer value...");
-				input.nextLine();
+				input.nextInt();
 				invalidInteger = true;
 			}
 		}while(invalidInteger);
@@ -54,89 +54,39 @@ public class Driver{
 		if ((transactionType == 1) || (transactionType == 2) || transactionType == 3){
 			System.out.println("Enter the amount: ");
 			amount = input.nextDouble();
-			
+		}
 		
-		
-		switch (transactionType){
-		case 1:{
+		if (transactionType == 1){
 			MonetaryTransaction withdraw = new Withdraw(amount);
 			account.doTransaction(withdraw);
 			menu(account);
-			break;
 		}
 		
-		case 2:{
+		else if (transactionType == 2){
 			MonetaryTransaction deposit = new Deposit(amount);
 			account.doTransaction(deposit);
 			menu(account);
-			break;
-		}	
-		case 3:{
-			System.out.println("Choose an account to transfer money to: ");
-			System.out.println("1. Checking");
-			System.out.println("2. Savings");
-			System.out.println("3. Retirement");
-			do{
-				try{
-					accountSelection = input.nextInt();
-					invalidInteger = false;
-				}
-				catch(InputMismatchException e){
-					System.out.println("Please enter an integer value...");
-					input.nextLine();
-					invalidInteger = true;
-				}
-			}while(invalidInteger);
-			
-			switch (accountSelection){
-			case 1:{
-				MonetaryTransaction transferC = new Transfer(checking, amount);
-				account.doTransaction(transferC);
-				menu(account);
-				break;
-			}
-			case 2:{
-				MonetaryTransaction transferS = new Transfer(savings, amount);
-				account.doTransaction(transferS);
-				menu(account);
-				break;
-			}
-			case 3:{
-				MonetaryTransaction transferR = new Transfer(retirement, amount);
-				account.doTransaction(transferR);
-				menu(account);
-				break;
-			}
-			default:{
-				System.out.println("Please enter a value within the range, returning to the action menu.");
-				menu(account);
-				break;
-			}
-			}
-			break;
-		}	
-		case 4:{
+		}
+		
+		else if (transactionType == 3){
+			conductTransfer(account);
+		}
+		
+		else if (transactionType == 4){
 			account.computeInterestAndFees();//conducts fee adjustment
 			menu(account);
-			break;
 		}
-		case 5:{
+		
+		else if (transactionType == 5){
+			System.out.println("Returning to main menu....");
 			accountSelection();
-			break;
 		}
-		default:{
+		
+		else{
 			System.out.println("Invalid operation chosen, please enter a value within the range, returning to action menu.");
 			menu(account);
-			break;
 		}
 		}
-		
-		
-		
-		
-	}
-
-}
 	
 	public static void accountSelection(){
 		int accountChoice = 0;
@@ -147,6 +97,8 @@ public class Driver{
 		System.out.println("2. Savings");
 		System.out.println("3. Retirement");
 		System.out.println("4. Exit");
+		
+		
 		do{
 			try{
 				accountChoice = input.nextInt();
@@ -182,4 +134,54 @@ public class Driver{
 			break;
 		}
 	}
+
+	public static void conductTransfer(BankAccount account){
+		int accountSelection = 0;
+		boolean invalidInteger;
+		System.out.println("Choose an account to transfer money to: ");
+		System.out.println("1. Checking");
+		System.out.println("2. Savings");
+		System.out.println("3. Retirement");
+		do{
+			try{
+				accountSelection = input.nextInt();
+				invalidInteger = false;
+			}
+			catch(InputMismatchException e){
+				System.out.println("Please enter an integer value...");
+				input.nextInt();
+				invalidInteger = true;
+			}
+		}while(invalidInteger);
+		
+		
+		
+		switch (accountSelection){
+			case 1:{
+				MonetaryTransaction transferC = new Transfer(checking, amount);
+				account.doTransaction(transferC);
+				menu(account);
+				break;
+			}
+			case 2:{
+				MonetaryTransaction transferS = new Transfer(savings, amount);
+				account.doTransaction(transferS);
+				menu(account);
+				break;
+			}
+			case 3:{
+				MonetaryTransaction transferR = new Transfer(retirement, amount);
+				account.doTransaction(transferR);
+				menu(account);
+				break;
+			}
+			default:{
+				System.out.println("Please enter a value within the range, returning to the action menu.");
+				menu(account);
+				break;
+			}
+		}
+
+	}
 }
+
