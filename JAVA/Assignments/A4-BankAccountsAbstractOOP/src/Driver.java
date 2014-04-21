@@ -1,4 +1,8 @@
 import java.util.InputMismatchException;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import java.util.Scanner;
 
 /* Author: Fredrick Paulin <fpaulin@umflint.edu>
@@ -18,8 +22,14 @@ public class Driver  {
 	
 	public static void main(String[] args) {
 		
+		GUIFrame guiFrame = new GUIFrame(); //create a frame object
+		guiFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//closes the window when finished
+		
+		guiFrame.setSize(400, 450);
+		guiFrame.setVisible(true);
+		
 		System.out.println("Welcome to the bank application");
-		accountSelection();
+		//accountSelection(); move the contents of this method and the following methods into the GUI Fame
 	}
 
 	public static void menu(BankAccount account) throws InputMismatchException{//displays menu options to user
