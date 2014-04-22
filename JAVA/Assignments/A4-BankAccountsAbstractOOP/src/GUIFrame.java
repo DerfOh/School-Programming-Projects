@@ -92,9 +92,9 @@ public class GUIFrame extends JFrame{
 		
 		
 		//add the elements to the frame
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridy = 0;
-		c.gridx = 0;
+		c.fill = GridBagConstraints.HORIZONTAL;//fills grid area according to element size
+		c.gridy = 0;//sets position on grid y axis
+		c.gridx = 0;//sets position on grid x axis
 		add(lbName, c);
 		c.gridx = 1;
 		add(rbChecking, c);
