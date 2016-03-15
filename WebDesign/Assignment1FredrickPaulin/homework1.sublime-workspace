@@ -1,0 +1,407 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"column",
+				"column-headings"
+			],
+			[
+				"file-out",
+				"report-file-out"
+			],
+			[
+				"cargo-in",
+				"cargo-in-name"
+			],
+			[
+				"cargo",
+				"cargo-in-name"
+			],
+			[
+				"header",
+				"header-info-out-line1"
+			],
+			[
+				"total",
+				"totalSeconds"
+			],
+			[
+				"averag",
+				"averageSeconds"
+			],
+			[
+				"aver",
+				"averageSeconds"
+			],
+			[
+				"totla",
+				"totalSeconds"
+			],
+			[
+				"file",
+				"fileZillaButton_Click"
+			],
+			[
+				"te",
+				"Text"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Setup Server…"
+			],
+			[
+				"node",
+				"Build With: Nodejs"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"run",
+				"Build: Run Java"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"waka",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 424.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Fredrick/ownCloud/Documents/School/WebDesign/Week 1 Material/WebPage.html",
+		"/C/Users/Fredrick/ownCloud/Documents/School/WebDesign/Assignment1FredrickPaulin/home.html",
+		"/C/Users/Fredrick/Desktop/New folder/chapter-04/indicating-a-citation.html",
+		"/C/Users/Fredrick/Downloads/LWD4e_chapter05/LWD4e_chapter05/ex5-1_recipe.txt",
+		"/C/Users/Fredrick/Downloads/LWD4e_chapter05/LWD4e_chapter05/ex5-1_recipe_final.html",
+		"/C/Users/Fredrick/Downloads/LWD4e_chapter05/LWD4e_chapter05/ex5-3_blog_final.html",
+		"/C/Users/Fredrick/Downloads/LWD4e_chapter05/LWD4e_chapter05/ex5-2_post_final.html",
+		"/C/Users/Fredrick/Desktop/New folder/chapter-04/ruby-annotations.html",
+		"/C/Users/Fredrick/ownCloud/Documents/School/WebDesign/Week 1 Material/blackgoose.txt",
+		"/C/Users/Fredrick/Downloads/Crime and Police Rebalance and Enhancement-15-v1-3-1/CPRE - Readme.txt",
+		"/C/Users/Fredrick/Downloads/CryingLightning's FX 1.7-6-1-7/CryingLightning'sFX/ReadME.txt",
+		"/C/Users/Fredrick/Downloads/f5ab25-OpenAllInteriors/readme.txt",
+		"/F/uui/syslinux.cfg",
+		"/C/Users/Fredrick/Downloads/AutoParts/AutoParts/Form1.vb",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/inspect.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/search.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/redefines.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/Control Breaks on a report.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/searching a table.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/loading a table from a file.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/References/sorting a file.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment3/apartmentProfitCalculator.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment3/Rent.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment4/IRS.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/stringandunstring.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment2/data2.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment2/readdata.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment2/testdata.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment1/assign1.CBL",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/A7/FredrickPaulin-A7-lookUpTable/FredrickPaulin-A7-lookUpTable/shipLookupTable.cbl",
+		"/c/users/fredrick/appdata/local/temp/tmpajz5iy.html",
+		"/D/Games/Halo/FOR THE LOVE OF GOD PLEASE README.txt",
+		"/D/Games/Halo/playername.txt",
+		"/C/Users/Fredrick/Downloads/depressurizer-0.6.1.0/readme.txt",
+		"/F/Halo/playername.txt",
+		"/F/Evolve/Useful Links.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment5/FredrickPaulinAssignment5CarRental/FredrickPaulinAssignment5CarRental/CarRental.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/sortProgram/sortProgram/Program1.cbl",
+		"/C/Users/Fredrick/AppData/Local/Temp/Array-2d.cbl",
+		"/C/Users/Fredrick/ownCloud/Documents/School/Database/Chapter 5/owner update.txt",
+		"/C/Users/Fredrick/Downloads/Express Installation/FOR THE LOVE OF GOD PLEASE README.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/sort6.cbl",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/mzl350i.c",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/readme",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/SFTP.errors.log",
+		"/C/Users/Fredrick/Desktop/testOutput.txt",
+		"/C/Users/Fredrick/Downloads/mzl350i-pi-ext-master/mzl350i-pi-ext-master/src/mzl350i.c",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/Raspberry Pi 2",
+		"/C/Users/Fredrick/Downloads/revouninstaller/revouninstaller-portable/License.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428775529/DerfOh-02/home/ogp_agent/OGP_User_Files/2/System/KillingFloor.ini",
+		"/C/Users/Fredrick/Downloads/mzl350i-pi-ext-master/mzl350i-pi-ext-master/src/Makefile",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428610074/Raspberry Pi/boot/overlays/README",
+		"/C/Users/Fredrick/Desktop/mzl350i-pi-ext-master/mzl350i-pi-ext-master/src/mzl350i.c",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428621635/Raspberry Pi/usr/share/X11/xorg.conf.d/99-fbturbo.conf",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428621404/Raspberry Pi/etc/modules",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428621123/Raspberry Pi/etc/modprobe.d/raspi-blacklist.conf",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428621068/Raspberry Pi/etc/modprobe.d/alsa-base-blacklist.conf",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428613671/Raspberry Pi/boot/config.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428620926/Raspberry Pi/etc/modprobe.d/raspi-blacklist.conf",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428614118/Raspberry Pi/boot/cmdline.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428608922/Raspberry Pi/etc/modules",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428607664/Raspberry Pi/boot/config.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428607281/Raspberry Pi/boot/config.txt",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/Raspberry Pi",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428607208/Raspberry Pi/boot/config.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428606888/Raspberry Pi/boot/config.txt",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1428606829/Raspberry Pi/boot/issue.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/starterTemplate.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/reportData.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/sortdata.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/unsorteddata.txt",
+		"/C/Users/Fredrick/Desktop/Jupiter.Ascending.2015.CAMRip.XviD-FANTA/Jupiter Ascending 2015.CAMRip.XviD-FANTA/nf0.nfo",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/runIndex.bat",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/index.html",
+		"/E/ownCloud/Programming/COBOL/Assignment6/sort6.cbl",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/index.js",
+		"/C/Users/Fredrick/ownCloud/Applications/HexChat/config/downloads/Interstellar.2014.DVDScr.XVID.AC3.HQ.Hive-CM8/Interstellar.2014.DVDScr.XVID.AC3.HQ.Hive-CM8/Interstellar.2014.DVDScr.XVID.AC3.HQ.Hive-CM8.nfo",
+		"/C/Program Files/WinRAR/License.txt",
+		"/C/Users/Fredrick/Downloads/Reign of Kings Checker/How to use.txt",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/package.json",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/node_modules/express/node_modules/send/index.js",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/node_modules/index.html",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/installExpress.bat",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/installSocketIO.bat",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/simpleChat/source/node_modules/express/index.js",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/NodeRequirer.sublime-settings",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/source/package.json",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/source/installExpress.bat",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/source/runIndex.bat",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/source/index.js",
+		"/C/Users/Fredrick/ownCloud/Programming/JS/chatProgram/source/node_modules/index.js",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/Assignment6/sortProgram/sortProgram/temp.txt",
+		"/C/Users/Fredrick/Desktop/steamCMD.bat",
+		"/C/Users/Fredrick/Desktop/RoK.bat",
+		"/D/Code/MyFileLARGE.txt",
+		"/D/Code/workspace/.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/jre/jre/1.0.0-SNAPSHOT/resolver-status.properties",
+		"/D/Code/workspace/.metadata/.plugins/org.eclipse.team.cvs.core/.running",
+		"/D/Code/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs",
+		"/D/Code/workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.java.ui.prefs",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/JavaCCustom.sublime-build",
+		"/C/Program Files/Sublime Text 3/Packages/Java.sublime-package",
+		"/C/Users/Fredrick/Desktop/ConsoleApplication1/ConsoleApplication1/compile.bat",
+		"/C/Program Files (x86)/Steam/steamapps/common/Jade Empire/JadeEmpire.ini",
+		"/C/Users/Fredrick/ownCloud/Programming/VB/UtilsUI/UtilsUI/UtilsUI/Main.vb",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/ports.conf",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/apache2.conf",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/config.php",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/l4dserver",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/owncloud-ssl.conf",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-2/000-owncloud.conf",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/derfoh.csr",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1425104200/DerfOh-02/root/StatusAllServers.sh",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/DerfOh-02",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1425103086/Derfoh/root/derfoh.csr",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1425102000/Derfoh/root/derfoh.csr",
+		"/C/Users/Fredrick/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/Derfoh",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1425100645/Derfoh/root/derfoh.csr",
+		"/C/users/fredrick/appdata/local/temp/sublime-sftp-browse-1425100459/Derfoh/root/derfoh.csr",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/kfserver 2",
+		"/C/Users/Fredrick/Desktop/kfserver/kfserver",
+		"/C/Users/Fredrick/AppData/Local/Temp/fz3temp-1/kfserver",
+		"/C/Users/Fredrick/ownCloud/Programming/COBOL/labQuiz3/quiz3.txt",
+		"/C/Users/Fredrick/ownCloud/Documents/Playbook Reddit/General/autoexec128tick.cfg",
+		"/C/Users/Fredrick/Downloads/FredrickPaulinAssignment3/Assignment3/apartmentProfitCalculator.cbl",
+		"/C/Users/Fredrick/ownCloud/Utilities/WNetWatcher.cfg",
+		"/C/Users/Fredrick/Documents/Visual Studio 2012/Projects/ConsoleApplication1/ConsoleApplication1/Program1.cbl",
+		"/C/Program Files (x86)/Steam/steamapps/common/Wolfenstein.The.New.Order/base/graphicsprofiles.json"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"C:\\Users\\Fredrick\\ownCloud\\Programming\\COBOL\\Assignment7\\FredrickPaulin-A7-lookUpTable\\FredrickPaulin-A7-lookUpTable",
+			"C:\\Users\\Fredrick\\ownCloud\\Programming\\COBOL\\Assignment6"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"web",
+			"heading1",
+			"heading2",
+			"39",
+			" ",
+			"getinput()",
+			"get input",
+			"5.11",
+			"teraCopyButton",
+			"spaceSnifferButton",
+			"fileZillaButton",
+			"winDirStatButton",
+			"seven",
+			"filecommander",
+			"filecommander	",
+			"filecommander",
+			"name"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"column-headers",
+			"cargo-type-header",
+			"40"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 129.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 100.0
+	},
+	"pinned_build_system": "Packages/COBOL Syntax/MF COBOL - ALL.sublime-build",
+	"project": "homework1.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 338.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

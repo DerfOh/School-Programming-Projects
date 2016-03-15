@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- set the title of the page -->
+<title>SafeHome Security - Feedback</title>
+<!-- set the style for the page -->
+<link rel="stylesheet" type="text/css" href="./styles/default.css">
+</head>
+<!-- fill out the body with content -->
+<body class ="content">
+	<!-- This is an example of using the span tag to change a property of the text-->
+
+	<!--set the division class so the main content has an appropriate background -->
+	<div class="primaryContent">
+
+	<!-- The following section demonstrates the three different styles of links -->
+	<!-- Site Navigation section -->
+	
+	<nav>
+	<a href = "./home.html">Home</a> | <a href = "./services.html">Services</a> | <a href="./info.html">More Info</a> |<a href="https://youtu.be/-rQyxgoNyv8" target="_blank">Security Tips Video</a> | <a href="./gallery.html">Gallery</a> | <a href="./feedback.html">Feedback</a> | <a href="mailto:fpaulin@umflint.edu">E-mail Me</a>
+	</nav>
+	<!-- End navigation section -->
+
+	<h1>
+		<span style ="color:yellow">SafeHome Products - Feedback</span>
+	</h1>
+	
+	<form action="/feedback.php" method="post">
+	<fieldset>
+		<legend>Let us know how we're doing</legend>
+		<ul type="circle">
+			<li> <label for="nameIn">Name: </label>
+					<input type="text" name="username" id="nameIn"></li>
+
+			<li> <label for="emailIn">Email: </label>
+					<input type="text" name="username" id="emailIn"></li>
+
+			<li><label for="wiredorwireless">Is your network wired or wireless? </label>
+					<select name="wiredorwireless">
+						<option>wired</option>
+						<option>wireless</option>
+
+					</select>
+
+			<li> <label for="emailOptOut">Recieve Promotions: </label>
+					<input type="checkbox" name="optout" id="emailOptOut"></li>
+
+			<li><label for="commentArea">Feedback: </label>
+					<input type="textarea" name="coments" id="commentArea" rows="10" cols="20"></li>
+
+			<li><label for="secretCode">Premium support code: </label>
+					<input type="password" name="premiumcode" id="secretCode"></li>
+
+			<li><label for="feedbackRadio">Feedback </label>
+					<input type="radio"	name="feedbackRadio" id="feebackRadio" tabindex=""></li>
+
+			<li><label for="complaintRadio">Complaint </label>
+					<input type="radio"	name="feedbackRadio" id="complaintRadio"></li>
+		</ul>
+
+		<input type="submit" value="Submit">
+		</fieldset>
+	</form>
+	<hr />
+	</div>
+</body>
+</html>
+
+<!-- Fredrick Paulin CIS 263 -->
+<!-- Assignment 3  -->
+<!-- CSC/CIS 263 Web Design and Development -->

@@ -1,0 +1,40 @@
+	body {
+		/* setting a background color for the page */
+		background-color: #257899;
+		margin: 10%;
+		font-family: sans-serif;
+		text-align: justify;
+	}
+	h1 {
+		/* change font types and sizes for heading 1 */
+		margin: 10%;
+		font-family: sans-serif;
+		font-size: 20;
+	}
+	h2 {
+		/* change the font types and size for heading 2 */
+		font-family: sans-serif;
+		font-size: 14;
+	}
+	p {
+		/* adjust paragraph style properties */
+		margin: 5%;
+		font-family: sans-serif;
+		font-size: 14px;
+	}
+	blockquote {
+		/* adjust the block quote style and properties */
+	    display: block;
+	    margin-top: 10px;
+	    margin-bottom: 1px;
+	    margin-left: 50px;
+	    margin-right: 50px;
+	    color: #CCCC00;
+	    font-style: italic;
+	    text-align: center;
+	    font-size: 12px;
+	}
+	ol {
+		font-style: bold;
+		margin-left: 10%;
+	}
